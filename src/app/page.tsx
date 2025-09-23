@@ -5,8 +5,7 @@ export default function Home() {
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
-          className="dark:invert"
-          src="/next.svg"
+          src="/introduce_me.png"
           alt="Next.js logo"
           width={180}
           height={38}
@@ -14,14 +13,18 @@ export default function Home() {
         />
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
+            안녕하세요 저는 최성입니다.{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-3 py-0.5 rounded">
+              崔星
             </code>
-            .
+            
           </li>
           <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+            제 이름은 '별'이라는 의미이고, 클라우드에 관심을 갖고 있어서 구름도 넣어봤습니다.
+          </li>
+
+          <li className="tracking-[-.01em]">
+           이 캐릭터가 입고있는 옷은 제가 좋아하는 '맨체스터 시티'의 유니폼입니다.
           </li>
         </ol>
 
