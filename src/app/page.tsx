@@ -20,11 +20,11 @@ export default function Home() {
             
           </li>
           <li className="tracking-[-.01em]">
-            제 이름은 '별'이라는 의미이고, 클라우드에 관심을 갖고 있어서 구름도 넣어봤습니다.
+            제 이름은 &apos;별&apos;이라는 의미이고, 클라우드에 관심을 갖고 있어서 구름도 넣어봤습니다.
           </li>
 
           <li className="tracking-[-.01em]">
-           이 캐릭터가 입고있는 옷은 제가 좋아하는 '맨체스터 시티'의 유니폼입니다.
+           이 캐릭터가 입고있는 옷은 제가 좋아하는 &apos;맨체스터 시티&apos;의 유니폼입니다.
           </li>
         </ol>
 
