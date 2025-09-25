@@ -2,19 +2,37 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full bg-black text-white flex items-center justify-center">
+
+
+
+
+
+
+
+    
+    <div
+      className="relative min-h-screen w-full text-white flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url(/my-dream.jpeg)" }} // ← 여기서 적용!
+    >
+      {/* 오버레이로 글자 가독성 확보 */}
+      <div className="absolute inset-0 bg-black/40" />
       <main className="w-full max-w-4xl text-center px-6">
         {/* 텍스트 블록 */}
         <div className="animate-heroText w-fit mx-auto sm:mx-0 text-left">
           <h1 className="font-extrabold leading-tight text-[24px] sm:text-[36px]">
-            세상이 조금 더 행복해지면 어떨까요?
+            기술을 통해 사랑을 전하는 개발자가 되고 싶습니다.
           </h1>
           <p className="mt-2 font-extrabold leading-tight text-[20px] sm:text-[28px]">
-            당신과 최성은
+            안녕하세요? 저는 최성입니다.
             <br className="hidden sm:block" />
-            같은 꿈을 꾸고 있습니다.
+            여러분께 많은 것을 배우고 싶습니다.
           </p>
         </div>
+
+
+
+
+
 
         {/* 라인 + click */}
         <div className="relative mt-6 sm:mt-8">
