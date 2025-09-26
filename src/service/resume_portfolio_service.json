@@ -1,5 +1,12 @@
-{
-    "project_name" : "CNStudy",
-    "project_introduction" : "LG CNS AM inspire camp 3기의 학습 도움 웹 앱",
-    "project_github_url" : "https://github.com/StarChoiMarine/CNStudy-FE"
-}
+[
+  {
+    "projectName": "NewsBalance",
+    "description": "AI 기반 정치 콘텐츠 편향 분석 플랫폼",
+    "url": "https://github.com/NewsBalance"
+  },
+  {
+    "projectName": "TAPE",
+    "description": "센서 기반 러닝 헬스케어 솔루션",
+    "url": "https://github.com/TAPE-project"
+  }
+]

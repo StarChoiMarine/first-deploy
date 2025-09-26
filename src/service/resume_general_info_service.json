@@ -1,5 +1,8 @@
+[
 {
-    "name" : "Seong Choi",
-    "github" : "StarChoiMarine",
-    "info" : "기술로 세상을 더 따숩게"
+  "name": "최성",
+  "introduction": "클라우드 아키텍트를 꿈꾸는 개발자",
+  "email" : "sung000054@gmail.com",
+  "github": "https://github.com/StarChoiMarine"
 }
+]

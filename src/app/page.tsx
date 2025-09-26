@@ -1,23 +1,52 @@
-import Link from "next/link";
+// app/page.tsx (Server Component)
+import ResumeLauncher from "./resume-launcher";
 
-export default function Home() {
+type Project = {
+  project_name: string;
+  project_introduction: string;
+  project_period: string;
+  project_github: string;
+};
+type GeneralInfo = {
+  name: string;
+  introduction: string;
+  email : string;
+  github: string;
+};
+
+async function getGeneralInfo(): Promise<GeneralInfo> {
+  const res = await fetch(
+    "https://raw.githubusercontent.com/StarChoiMarine/first-deploy/refs/heads/main/src/service/resume_general_info_service.json",
+    { cache: "no-store" }
+  );
+  if (!res.ok) throw new Error("Failed to fetch general info");
+  return res.json();
+}
+
+async function getPortfolio(): Promise<Project[]> {
+  const res = await fetch(
+    "https://raw.githubusercontent.com/StarChoiMarine/first-deploy/refs/heads/main/src/service/resume_portfolio_service.json",
+    { cache: "no-store" }
+  );
+  if (!res.ok) throw new Error("Failed to fetch portfolio info");
+  return res.json();
+}
+
+export default async function Page() {
+  const [generalInfo, portfolio] = await Promise.all([
+    getGeneralInfo(),
+    getPortfolio(),
+  ]);
+
   return (
-
-
-
-
-
-
-
-    
     <div
       className="relative min-h-screen w-full text-white flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: "url(/my-dream.jpeg)" }} // ← 여기서 적용!
+      style={{ backgroundImage: "url(/my-dream.jpeg)" }}
     >
-      {/* 오버레이로 글자 가독성 확보 */}
       <div className="absolute inset-0 bg-black/40" />
-      <main className="w-full max-w-4xl text-center px-6">
-        {/* 텍스트 블록 */}
+
+      <main className="relative z-10 w-full max-w-4xl text-center px-6">
+        {/* ✅ 히어로 애니메이션 복원 */}
         <div className="animate-heroText w-fit mx-auto sm:mx-0 text-left">
           <h1 className="font-extrabold leading-tight text-[24px] sm:text-[36px]">
             기술을 통해 사랑을 전하는 개발자가 되고 싶습니다.
@@ -29,28 +58,17 @@ export default function Home() {
           </p>
         </div>
 
-
-
-
-
-
-        {/* 라인 + click */}
+        {/* 중앙 라인 + 버튼 자리 */}
         <div className="relative mt-6 sm:mt-8">
           <div className="h-[1px] bg-white/80 mx-auto animate-growLine" />
-          <Link
-            href="/resume"
-            className="absolute -right-1 top-1/2 -translate-y-1/2 text-sm sm:text-base opacity-0 animate-showCta"
-          >
-            resume 보러가기 →
-          </Link>
+          {/* 버튼은 클라이언트 컴포넌트가 렌더 */}
+          <ResumeLauncher generalInfo={generalInfo} portfolio={portfolio} />
         </div>
       </main>
 
-      {/* 푸터 */}
       <footer className="absolute bottom-4 w-full text-center text-xs text-white/80 text-[15px]">
         © {new Date().getFullYear()} LG CNS AM Inspire Camp 3th 최성
       </footer>
     </div>
   );
 }
-

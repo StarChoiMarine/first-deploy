@@ -48,3 +48,4 @@ body {
 .animate-heroText { animation: heroText 5.5s ease-in-out forwards; }
 .animate-growLine { animation: growLine 2.6s ease-in-out forwards; animation-delay: 2.6s; }
 .animate-showCta  { animation: showCta 0.8s ease-out forwards; animation-delay: 3.9s; }
+.animate-paperIn  { animation: paperIn 0.3s ease-out both; }
