@@ -1,116 +1,73 @@
-import Image from "next/image";
+// app/page.tsx (Server Component)
+import ResumeLauncher from "./resume-launcher";
 
-// 서버 컴포넌트에서 직접 API 호출
-async function getResumeInfo() {
-  const res = await fetch('https://raw.githubusercontent.com/StarChoiMarine/first-deploy/refs/heads/0.3/resume/src/service/resume_general_info_service.json');
-  // API 응답이 성공적인지 확인
-  if (!res.ok) {
-    // 응답이 실패하면 오류를 던져 Next.js가 오류 페이지를 보여주도록 함
-    throw new Error('Failed to fetch data');
-  }
+type Project = {
+  project_name: string;
+  project_introduction: string;
+  project_period: string;
+  project_github: string;
+};
+type GeneralInfo = {
+  name: string;
+  introduction: string;
+  email : string;
+  github: string;
+};
+
+async function getGeneralInfo(): Promise<GeneralInfo> {
+  const res = await fetch(
+    "https://raw.githubusercontent.com/StarChoiMarine/first-deploy/refs/heads/main/src/service/resume_general_info_service.json",
+    { cache: "no-store" }
+  );
+  if (!res.ok) throw new Error("Failed to fetch general info");
   return res.json();
 }
 
-export default function Home() {
+async function getPortfolio(): Promise<Project[]> {
+  const res = await fetch(
+    "https://raw.githubusercontent.com/StarChoiMarine/first-deploy/refs/heads/main/src/service/resume_portfolio_service.json",
+    { cache: "no-store" }
+  );
+  if (!res.ok) throw new Error("Failed to fetch portfolio info");
+  return res.json();
+}
+
+export default async function Page() {
+  const [generalInfo, portfolio] = await Promise.all([
+    getGeneralInfo(),
+    getPortfolio(),
+  ]);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          src="/introduce_me.png"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            안녕하세요 저는 최성입니다.{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-3 py-0.5 rounded">
-              崔星
-            </code>
-            
-          </li>
-          <li className="tracking-[-.01em]">
-            제 이름은 &apos;별&apos;이라는 의미이고, 클라우드에 관심을 갖고 있어서 구름도 넣어봤습니다.
-          </li>
+    <div
+      className="relative min-h-screen w-full text-white flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url(/my-dream.jpeg)" }}
+    >
+      <div className="absolute inset-0 bg-black/40" />
 
-          <li className="tracking-[-.01em]">
-           이 캐릭터가 입고있는 옷은 제가 좋아하는 &apos;맨체스터 시티&apos;의 유니폼입니다.
-          </li>
-        </ol>
+      <main className="relative z-10 w-full max-w-4xl text-center px-6">
+        {/* ✅ 히어로 애니메이션 복원 */}
+        <div className="animate-heroText w-fit mx-auto sm:mx-0 text-left">
+          <h1 className="font-extrabold leading-tight text-[24px] sm:text-[36px]">
+            기술을 통해 사랑을 전하는 개발자가 되고 싶습니다.
+          </h1>
+          <p className="mt-2 font-extrabold leading-tight text-[20px] sm:text-[28px]">
+            안녕하세요? 저는 최성입니다.
+            <br className="hidden sm:block" />
+            여러분께 많은 것을 배우고 싶습니다.
+          </p>
+        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* 중앙 라인 + 버튼 자리 */}
+        <div className="relative mt-6 sm:mt-8">
+          <div className="h-[1px] bg-white/80 mx-auto animate-growLine" />
+          {/* 버튼은 클라이언트 컴포넌트가 렌더 */}
+          <ResumeLauncher generalInfo={generalInfo} portfolio={portfolio} />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="absolute bottom-4 w-full text-center text-xs text-white/80 text-[15px]">
+        © {new Date().getFullYear()} LG CNS AM Inspire Camp 3th 최성
       </footer>
     </div>
   );
