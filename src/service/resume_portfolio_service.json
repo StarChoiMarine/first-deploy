@@ -1,12 +1,16 @@
 [
-  {
-    "projectName": "NewsBalance",
-    "description": "AI 기반 정치 콘텐츠 편향 분석 플랫폼",
-    "url": "https://github.com/NewsBalance"
-  },
-  {
-    "projectName": "TAPE",
-    "description": "센서 기반 러닝 헬스케어 솔루션",
-    "url": "https://github.com/TAPE-project"
-  }
+
+    {
+        "project_name" : "LG CNS AM Inspire Camp 3th Blog",
+        "project_introduction" : "3기의 효율적인 지식 공유와 협업을 위한 최고의 학습 파트너",
+        "project_period" : "2025.09.15-2025.09.19",
+        "project_github" : "https://github.com/StarChoiMarine/CNStudy-FE"
+    },
+    {
+        "project_name" : "AI 기반 정치 콘텐츠 분석 및 토론 플랫폼, NewsBalance",
+        "project_introduction" : "파인튜닝된 AI 모델이 유튜브 정치 컨텐츠의 편향도를 분석하여 균형잡힌 정보소비를 돕고, ai 도우미가 컨텐츠의 근거기사를 찾아주고 사용자간의 토론을 도와주는 플랫폼",
+        "project_period" : "2025.03.05 -2025.06.15",
+        "project_github" : "https://github.com/StarChoiMarine/news-capstone"
+    }
+
 ]
