@@ -27,9 +27,12 @@ export default function ResumeOverlay({
 }) {
   return (
     <div
-      className="absolute inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm]"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-6 sm:pt-10"
       onClick={onClose}
     >
+
+      <div className="absolute inset-0 bg-black/10 backdrop-blur-lg" />
+
       <div
         onClick={(e) => e.stopPropagation()}
         className="
@@ -68,7 +71,7 @@ export default function ResumeOverlay({
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               {generalInfo.name}
             </h2>
-            <p className="text-gray-700 mb-4">{generalInfo.introduction}</p>
+            <p className="whitespace-pre-line text-gray-700 mb-4">{generalInfo.introduction}</p>
             {generalInfo.email && (
               <p className="text-gray-700 mb-1">
                 <strong>Email</strong> :{" "}
@@ -104,16 +107,24 @@ export default function ResumeOverlay({
                 <h4 className="text-xl font-bold text-gray-900 mb-2">
                   {p.project_name}
                 </h4>
-                <p className="text-gray-700 mb-2">{p.project_introduction}</p>
+                <p className="whitespace-pre-line text-gray-700 mb-2">{p.project_introduction}</p>
                 <p className="text-gray-700 mb-4">{p.project_period}</p>
                 <a
-                  href={p.project_github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+                href={p.project_github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
                 >
-                  📂 GitHub Repository
-                </a>
+                {/* GitHub 아이콘 (public/github-mark-white.svg 같은 파일 준비) */}
+                <Image
+                  src="/github-mark.png"
+                  alt="GitHub Icon"
+                  width={20}
+                  height={20}
+                  className="dark:invert"
+                />
+                GitHub 바로가기
+              </a>
               </div>
             ))}
           </div>
