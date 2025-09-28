@@ -8,7 +8,7 @@
     },
     {
         "project_name" : "AI 기반 정치 콘텐츠 분석 및 토론 플랫폼, NewsBalance",
-        "project_introduction" : "파인튜닝된 AI 모델이 유튜브 정치 컨텐츠룰 분석하여 균형잡힌 정보소비를 돕고,\\n AI 사회자가 토론을 도와주는 플랫폼",
+        "project_introduction" : "파인튜닝된 AI 모델이 유튜브 정치 컨텐츠룰 분석하여 균형잡힌 정보소비를 돕고,\n AI 사회자가 토론을 도와주는 플랫폼",
         "project_period" : "2025.03.05 -2025.06.15",
         "project_github" : "https://github.com/StarChoiMarine/news-capstone"
     }
