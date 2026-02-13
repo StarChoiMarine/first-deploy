@@ -26,31 +26,71 @@ body {
 }
 
 @keyframes heroText {
-  0% { opacity: 0; transform: translateX(0) translateY(6px); }
-  12% { opacity: 1; transform: translateX(0) translateY(0); }
-  30% { opacity: 1; transform: translateX(0); }
-  70% { opacity: 1; transform: translateX(-20vw); }
-  100% { opacity: 1; transform: translateX(-20vw); }
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(6px);
+  }
+
+  12% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-20vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-20vw);
+  }
 }
 
 @keyframes growLine {
-  0% { width: 0%; opacity: 0; }
-  10% { opacity: 0.9; }
-  100% { width: 96%; opacity: 1; }
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  100% {
+    width: 96%;
+    opacity: 1;
+  }
 }
 
 @keyframes showCta {
-  0% { opacity: 0; transform: translateY(-50%) translateX(8px); }
-  100% { opacity: 1; transform: translateY(-50%) translateX(0); }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(8px);
+  }
 
-@keyframes paperIn {
-  0% { opacity: 0; transform: scale(0.92); }
-  100% { opacity: 1; transform: scale(1); }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
 }
 
 /* 유틸 클래스 */
-.animate-heroText { animation: heroText 5.5s ease-in-out forwards; }
-.animate-growLine { animation: growLine 2.6s ease-in-out forwards; animation-delay: 2.6s; }
-.animate-showCta  { animation: showCta 0.8s ease-out forwards; animation-delay: 3.9s; }
-.animate-paperIn  { animation: paperIn 0.3s ease-out both; }
+.animate-heroText {
+  animation: heroText 5.5s ease-in-out forwards;
+}
+
+.animate-growLine {
+  animation: growLine 2.6s ease-in-out forwards;
+  animation-delay: 2.6s;
+}
+
+.animate-showCta {
+  animation: showCta 0.8s ease-out forwards;
+  animation-delay: 3.9s;
+}
