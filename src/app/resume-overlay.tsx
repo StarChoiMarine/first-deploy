@@ -12,7 +12,7 @@ type Project = {
 type GeneralInfo = {
   name: string;
   introduction: string;
-  email : string;
+  email: string;
   github: string;
 };
 
@@ -26,110 +26,99 @@ export default function ResumeOverlay({
   portfolio: Project[];
 }) {
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-start justify-center pt-6 sm:pt-10"
-      onClick={onClose}
-    >
-
-      <div className="absolute inset-0 bg-black/10 backdrop-blur-lg" />
-
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="
-          relative w-[92%] max-w-4xl max-h-[85vh] overflow-y-auto
-          bg-white text-black rounded-2xl shadow-2xl p-10
-          animate-[paperIn_0.5s_ease-out_both]
-        "
+    <div className="relative w-[92%] max-w-4xl mx-auto py-10 sm:py-16 px-6 sm:px-10">
+      {/* 돌아가기 버튼 */}
+      <button
+        onClick={onClose}
+        className="group flex items-center gap-2 mb-10 text-white/70 hover:text-white transition-colors cursor-pointer"
+        aria-label="메인으로 돌아가기"
       >
-        {/* 닫기 버튼 */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-6 text-gray-500 hover:text-black text-xl"
-          aria-label="오버레이 닫기"
-        >
-          ✕
-        </button>
+        <span className="inline-block transition-transform group-hover:-translate-x-1">←</span>
+        <span className="text-sm font-medium">돌아가기</span>
+      </button>
 
-        {/* 헤더 */}
-        <header className="text-center my-8">
-          <h1 className="text-5xl font-extrabold tracking-tight text-gray-900">
-            RESUME
-          </h1>
-        </header>
+      {/* 헤더 */}
+      <header className="text-center mb-12">
+        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">
+          RESUME
+        </h1>
+        <div className="mt-4 h-[1px] w-24 bg-white/40 mx-auto" />
+      </header>
 
-        {/* 프로필 */}
-        <section className="mb-10 flex flex-col sm:flex-row items-center gap-8">
-          <div className="relative rounded-full overflow-hidden shadow-md w-50 h-80">
-            <Image
-              src={"/choi-seong.jpeg"}
-              alt="Profile"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              {generalInfo.name}
-            </h2>
-            <p className="whitespace-pre-line text-gray-700 mb-4">{generalInfo.introduction}</p>
-            {generalInfo.email && (
-              <p className="text-gray-700 mb-1">
-                <strong>Email</strong> :{" "}
-                <span className="font-medium">{generalInfo.email}</span>
-              </p>
-            )}
-            <p className="text-gray-700 mb-1">
-              <strong>GitHub</strong> :{" "}
-              <a
-                href={generalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium underline"
-              >
-                {generalInfo.github}
-              </a>
+      {/* 프로필 카드 */}
+      <section className="mb-12 bg-white/10 backdrop-blur-sm rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-8">
+        <div className="relative rounded-2xl overflow-hidden shadow-lg w-40 h-52 sm:w-48 sm:h-64 flex-shrink-0">
+          <Image
+            src={"/choi-seong.jpeg"}
+            alt="Profile"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="flex-1 text-center sm:text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            {generalInfo.name}
+          </h2>
+          <p className="whitespace-pre-line text-white/80 mb-5 leading-relaxed">
+            {generalInfo.introduction}
+          </p>
+          {generalInfo.email && (
+            <p className="text-white/70 mb-2 text-sm">
+              <strong className="text-white/90">Email</strong>{" "}
+              <span className="ml-2 font-medium">{generalInfo.email}</span>
             </p>
-          </div>
-        </section>
+          )}
+          <p className="text-white/70 text-sm">
+            <strong className="text-white/90">GitHub</strong>{" "}
+            <a
+              href={generalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 font-medium underline underline-offset-4 hover:text-white transition-colors"
+            >
+              {generalInfo.github}
+            </a>
+          </p>
+        </div>
+      </section>
 
-
-        {/* Portfolio */}
-        <section>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">
-            Major Activities in 2025
-          </h3>
-          <div className="space-y-6">
-            {portfolio.map((p, idx) => (
-              <div
-                key={idx}
-                className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition"
-              >
-                <h4 className="text-xl font-bold text-gray-900 mb-2">
-                  {p.project_name}
-                </h4>
-                <p className="whitespace-pre-line text-gray-700 mb-2">{p.project_introduction}</p>
-                <p className="text-gray-700 mb-4">{p.project_period}</p>
-                <a
+      {/* Portfolio */}
+      <section>
+        <h3 className="text-2xl font-semibold text-white mb-6 pb-3 border-b border-white/20">
+          Major Activities in 2025
+        </h3>
+        <div className="space-y-6">
+          {portfolio.map((p, idx) => (
+            <div
+              key={idx}
+              className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-colors"
+            >
+              <h4 className="text-xl font-bold text-white mb-2">
+                {p.project_name}
+              </h4>
+              <p className="whitespace-pre-line text-white/80 mb-2 leading-relaxed">
+                {p.project_introduction}
+              </p>
+              <p className="text-white/60 text-sm mb-4">{p.project_period}</p>
+              <a
                 href={p.project_github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
-                >
-                {/* GitHub 아이콘 (public/github-mark-white.svg 같은 파일 준비) */}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm font-medium"
+              >
                 <Image
                   src="/github-mark.png"
                   alt="GitHub Icon"
-                  width={20}
-                  height={20}
-                  className="dark:invert"
+                  width={18}
+                  height={18}
+                  className="invert"
                 />
                 GitHub 바로가기
               </a>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
