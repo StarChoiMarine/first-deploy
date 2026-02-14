@@ -107,7 +107,9 @@ export default function PortfolioClient({
                 }
                 transition={{ duration: 0.45, ease: "easeInOut" }}
             >
-                Love your neighbor as yourself _ Matthew 22:39
+                Find rest, O my soul, in God alone; my hope comes from him
+                <br />
+                <span>Psalm 62:5</span>
             </motion.footer>
 
             {/* ── Resume 풀페이지 ── */}
