@@ -70,15 +70,19 @@ export default function PortfolioClient({
                     pointerEvents: isMainVisible && phase !== "collapsing" ? "auto" : "none",
                 }}
             >
-                {/* 히어로 텍스트 */}
-                <div className="animate-heroText w-fit mx-auto sm:mx-0 text-left">
-                    <h1 className="font-extrabold leading-tight text-[24px] sm:text-[36px]">
-                        기술을 통해 사랑을 전하는 개발자가 되고 싶습니다.
+                {/* 히어로 텍스트 — h1과 설명을 분리 애니메이션 */}
+                <div className="w-fit mx-auto sm:mx-0 text-left">
+                    <h1 className="animate-heroTitle font-extrabold leading-tight text-[24px] sm:text-[36px]">
+                        안녕하세요? 기술을 통해 사랑을 전하는 개발자 최성입니다.
                     </h1>
-                    <p className="mt-2 font-extrabold leading-tight text-[20px] sm:text-[28px]">
-                        안녕하세요? 저는 최성입니다.
+                    <p className="animate-heroDesc mt-2 font-extrabold leading-tight text-[14px] sm:text-[16px]">
+                        이 배경은 2025년 여름 캄보디아 단기선교 활동 중 제가 아이들에게 진행한 컴퓨터 수업입니다.
+
                         <br className="hidden sm:block" />
-                        여러분께 많은 것을 배우고 싶습니다.
+                        간단한 수업 내용에도 신기해하고 행복해하는 아이들을 보며, 기술은 사랑을 향할 때 가장 아름다워진다는 것을 느꼈습니다.
+
+                        <br className="hidden sm:block" />
+                        사는 동안 다양한 사람들과 열심히 안정적인 시스템을 개발하여, 세상에 사랑을 남기고 가고 싶습니다.
                     </p>
                 </div>
 
