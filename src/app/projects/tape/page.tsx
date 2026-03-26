@@ -58,6 +58,14 @@ export default function TapePage() {
               <span key={t} className="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full">{t}</span>
             ))}
           </div>
+
+          {/* ── 앱 목업 이미지 ── */}
+          <div className="mt-10">
+            <ImagePlaceholder
+              filename="/images/tape/tape-app-mockup.jpg"
+              label="앱 목업 사진 — 스마트폰 TAPE UI 화면 + 아두이노 압력센서 인솔 (PDF p.3 왼쪽)"
+            />
+          </div>
         </div>
       </section>
 
@@ -94,6 +102,14 @@ export default function TapePage() {
             <FlowCard step="02" label="AI 분석" desc="21가지 보행 패턴 분류 · 위험도 판별" />
             <FlowCard step="03" label="솔루션 제공" desc="맞춤형 테이핑 영상 자동 생성 · Amazon S3 제공" />
           </div>
+
+          {/* ── 시스템 아키텍처 다이어그램 ── */}
+          <div className="mt-6">
+            <ImagePlaceholder
+              filename="/images/tape/tape-architecture.jpg"
+              label="시스템 아키텍처 다이어그램 — Arduino → Firebase → React Native(AI 분석) → Amazon S3 (PDF p.3 오른쪽)"
+            />
+          </div>
         </section>
 
         {/* Role */}
@@ -123,6 +139,21 @@ export default function TapePage() {
               </div>
             ))}
           </div>
+
+          {/* ── 역할 관련 사진 2장 ── */}
+          <div className="mt-6 grid sm:grid-cols-2 gap-4">
+            <ImagePlaceholder
+              filename="/images/tape/tape-app-analysis.jpg"
+              label="앱 분석 화면 — 센서 히트맵 + AI 분석 결과 스크린샷 (PDF p.4 가운데)"
+              className="min-h-48"
+            />
+            <ImagePlaceholder
+              filename="/images/tape/tape-presentation.jpg"
+              label="발표/전시 현장 사진 — 경진대회 발표 & 부스 전시 (PDF p.4 오른쪽)"
+              className="min-h-48"
+            />
+          </div>
+
           <div className="mt-5 p-5 bg-amber-50 border border-amber-100 rounded-2xl">
             <p className="text-sm text-amber-900 leading-relaxed">
               <strong>조기 풋살 모임</strong>에서 스포츠건강학과 친구에게 경험한 테이핑 경험을 서비스화하고 싶다는 생각에서 출발.
@@ -143,6 +174,34 @@ export default function TapePage() {
               </div>
             ))}
           </div>
+
+          {/* ── 수상 사진 3열 ── */}
+          <div className="mt-6 grid sm:grid-cols-3 gap-4">
+            <div>
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">교내 SW 대상</p>
+              <ImagePlaceholder
+                filename="/images/tape/tape-award-kgu.jpg"
+                label="경기대 SW 상상기업 대상 상장 + 수상 단체사진 (PDF p.5 왼쪽)"
+                className="min-h-52"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">교외 SW 페스티벌 최우수상</p>
+              <ImagePlaceholder
+                filename="/images/tape/tape-award-sw-festival.jpg"
+                label="SW페스티벌 최우수상 상장 + 팀원 사진 (PDF p.5 가운데)"
+                className="min-h-52"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">CES 2026 견학</p>
+              <ImagePlaceholder
+                filename="/images/tape/tape-ces2026.jpg"
+                label="CES 2026 라스베이거스 컨벤션센터 + 실리콘밸리 견학 사진 (PDF p.5 오른쪽)"
+                className="min-h-52"
+              />
+            </div>
+          </div>
         </section>
 
         {/* 다음 프로젝트 */}
@@ -154,6 +213,18 @@ export default function TapePage() {
           </Link>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ImagePlaceholder({ filename, label, className = "" }: { filename: string; label: string; className?: string }) {
+  return (
+    <div className={`border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center gap-2 bg-gray-50 p-6 w-full ${className}`}>
+      <svg className="w-10 h-10 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <code className="text-xs text-blue-500 text-center break-all">{filename}</code>
+      <p className="text-xs text-gray-400 text-center">{label}</p>
     </div>
   );
 }
