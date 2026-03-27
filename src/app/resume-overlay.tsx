@@ -202,20 +202,16 @@ function TapeContent() {
           </div>
         ))}
       </div>
-      {/* 활동 사진: 좌-세로 1장 / 우-위아래 2장 */}
-      <div className="grid grid-cols-2 gap-2" style={{ height: "340px" }}>
-        {/* 왼쪽: AI 분석 화면 */}
-        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50 flex items-center justify-center">
-          <Image src="/images/tape/tape-app-analysis.jpg" alt="AI 분석 화면" width={600} height={900} className="w-full h-full object-contain" />
+      {/* 활동 사진: 세로2장(좌,중) + 가로1장(우) */}
+      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 1fr 2fr", height: "300px" }}>
+        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
+          <Image src="/images/tape/tape-app-analysis.jpg" alt="앱 분석 결과" width={400} height={800} className="w-full h-full object-contain" />
         </div>
-        {/* 오른쪽: 센서 연동(위) + 현장 시연(아래) */}
-        <div className="flex flex-col gap-2 h-full">
-          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50 flex items-center justify-center" style={{ flex: "0 0 40%" }}>
-            <Image src="/images/tape/tape-app-live.jpeg" alt="센서 데이터 연동" width={600} height={400} className="w-full h-full object-contain" />
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50 flex items-center justify-center flex-1">
-            <Image src="/images/tape/tape-analysis2.jpg" alt="현장 시연" width={600} height={900} className="w-full h-full object-contain" />
-          </div>
+        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
+          <Image src="/images/tape/tape-app-live.jpeg" alt="노트북 센서 연결" width={400} height={800} className="w-full h-full object-contain" />
+        </div>
+        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <Image src="/images/tape/tape-analysis2.jpg" alt="현장 시연" width={900} height={600} className="w-full h-full object-cover" />
         </div>
       </div>
 
