@@ -57,6 +57,20 @@ export default function NewsbalancePage() {
               <span key={t} className="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full">{t}</span>
             ))}
           </div>
+
+          {/* ── 히어로 이미지 2장 ── */}
+          <div className="mt-10 grid sm:grid-cols-2 gap-4">
+            <ImagePlaceholder
+              filename="/images/newsbalance/newsbalance-illustration.jpg"
+              label="뉴스 AI 로봇 일러스트 — 돋보기 든 로봇이 뉴스 분석하는 이미지 (PDF p.11 왼쪽)"
+              className="min-h-64"
+            />
+            <ImagePlaceholder
+              filename="/images/newsbalance/newsbalance-demo-laptop.jpg"
+              label="서비스 데모 화면 — 랩탑에 표시된 NewsBalance 플랫폼 UI (PDF p.11 오른쪽)"
+              className="min-h-64"
+            />
+          </div>
         </div>
       </section>
 
@@ -112,6 +126,14 @@ export default function NewsbalancePage() {
                 </div>
               </div>
             </div>
+
+            {/* ── 아키텍처 다이어그램 ── */}
+            <div className="mt-5">
+              <ImagePlaceholder
+                filename="/images/newsbalance/newsbalance-architecture.jpg"
+                label="시스템 아키텍처 다이어그램 — Backend(Flask/KcBERT/Elasticsearch) + Frontend(React) 전체 흐름 (PDF p.12 오른쪽)"
+              />
+            </div>
           </div>
 
           {/* 문제 해결 사례 */}
@@ -121,7 +143,7 @@ export default function NewsbalancePage() {
               편향도 5단계 분류모델 개발 과정에서 가장 큰 병목은 자막 데이터 수집과 라벨링 과정의 비효율이었습니다.
               20만 개 이상의 데이터가 필요했지만 수작업 중심이라 속도가 느렸고, 라벨링 기준이 모호해 일관성 유지가 어려웠습니다.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div className="p-4 bg-purple-50 rounded-xl">
                 <p className="text-xs font-bold text-purple-700 mb-1">해결 1</p>
                 <p className="text-xs text-gray-600">yt-dlp 기반 자동 수집 구조 도입으로 유튜브 자막 확보 자동화</p>
@@ -131,7 +153,22 @@ export default function NewsbalancePage() {
                 <p className="text-xs text-gray-600">GPT Assistant 기반 1차 라벨링으로 검수 부담 대폭 절감</p>
               </div>
             </div>
-            <div className="flex gap-6 mt-4 pt-4 border-t border-gray-100">
+
+            {/* ── KcBERT + 자동학습 다이어그램 ── */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-4">
+              <ImagePlaceholder
+                filename="/images/newsbalance/newsbalance-kcbert-diagram.jpg"
+                label="KcBERT 모델 다이어그램 — 요약문장 → KcBERT 인코더 → softmax 5단계 분류 (PDF p.13 왼쪽)"
+                className="min-h-40"
+              />
+              <ImagePlaceholder
+                filename="/images/newsbalance/newsbalance-autolearn-diagram.jpg"
+                label="실시간 모델 자동 학습 시스템 — 자막추출 → GPT 라벨링 → CSV → 재학습 루프 (PDF p.13 오른쪽)"
+                className="min-h-40"
+              />
+            </div>
+
+            <div className="flex gap-6 pt-4 border-t border-gray-100">
               <div>
                 <p className="text-2xl font-black text-purple-600">5×</p>
                 <p className="text-xs text-gray-500">데이터 구축 속도 개선</p>
@@ -192,6 +229,34 @@ export default function NewsbalancePage() {
               </div>
             ))}
           </div>
+
+          {/* ── 수상 사진 3열 ── */}
+          <div className="mt-6 grid sm:grid-cols-3 gap-4">
+            <div>
+              <p className="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">심화캡스톤 은상</p>
+              <ImagePlaceholder
+                filename="/images/newsbalance/newsbalance-award-capstone.jpg"
+                label="경기대학교 심화캡스톤 은상 상장 (PDF p.14 왼쪽)"
+                className="min-h-52"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">한국정보기술학회 금상</p>
+              <ImagePlaceholder
+                filename="/images/newsbalance/newsbalance-award-kiit.jpg"
+                label="한국정보기술학회 우수논문상 금상 상장 (PDF p.14 가운데)"
+                className="min-h-52"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">팀 사진</p>
+              <ImagePlaceholder
+                filename="/images/newsbalance/newsbalance-team.jpg"
+                label="팀원 단체사진 + 발표/개발 현장 사진 (PDF p.14 오른쪽)"
+                className="min-h-52"
+              />
+            </div>
+          </div>
         </section>
 
         {/* 네비 */}
@@ -202,6 +267,18 @@ export default function NewsbalancePage() {
           </Link>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ImagePlaceholder({ filename, label, className = "" }: { filename: string; label: string; className?: string }) {
+  return (
+    <div className={`border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center gap-2 bg-gray-50 p-6 w-full ${className}`}>
+      <svg className="w-10 h-10 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <code className="text-xs text-purple-500 text-center break-all">{filename}</code>
+      <p className="text-xs text-gray-400 text-center">{label}</p>
     </div>
   );
 }
