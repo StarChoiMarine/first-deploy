@@ -203,7 +203,7 @@ function TapeContent() {
         ))}
       </div>
       {/* 활동 사진: 세로2장(좌,중) + 가로1장(우) */}
-      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 1fr 2fr", height: "300px" }}>
+      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 2fr 1fr", height: "300px" }}>
         <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
           <Image src="/images/tape/tape-app-analysis.jpg" alt="앱 분석 결과" width={400} height={800} className="w-full h-full object-contain" />
         </div>
