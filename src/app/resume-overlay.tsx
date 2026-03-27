@@ -163,8 +163,8 @@ function TapeContent() {
         </div>
         <div className="p-4 rounded-xl bg-orange-50 border border-orange-100">
           <p className="text-3xl font-black text-orange-500 mb-1">0<span className="text-lg">개</span></p>
-          <p className="text-sm font-semibold text-gray-700">기존 앱의 관절 보호 기능</p>
-          <p className="text-xs text-gray-500 mt-1">기록 측정에만 집중, 부상 예방 기능 없음</p>
+          <p className="text-sm font-semibold text-gray-700">관절 보호 기능 — Nike Run Club · 런데이</p>
+          <p className="text-xs text-gray-500 mt-1">가장 많이 쓰이는 러닝 앱도 기록 측정에만 집중, 부상 예방 기능 없음</p>
         </div>
       </div>
 
