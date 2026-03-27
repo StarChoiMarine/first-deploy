@@ -207,11 +207,11 @@ function TapeContent() {
         <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
           <Image src="/images/tape/tape-app-analysis.jpg" alt="앱 분석 결과" width={400} height={800} className="w-full h-full object-contain" />
         </div>
-        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
-          <Image src="/images/tape/tape-app-live.jpeg" alt="노트북 센서 연결" width={400} height={800} className="w-full h-full object-contain" />
-        </div>
         <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
           <Image src="/images/tape/tape-analysis2.jpg" alt="현장 시연" width={900} height={600} className="w-full h-full object-cover" />
+        </div>
+        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
+          <Image src="/images/tape/tape-app-live.jpeg" alt="노트북 센서 연결" width={400} height={800} className="w-full h-full object-contain" />
         </div>
       </div>
 
