@@ -212,15 +212,15 @@ function TapeContent() {
         </div>
         <div className="flex flex-col gap-1">
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{ height: "280px" }}>
-            <Image src="/images/tape/tape-analysis2.jpg" alt="결선발표 현장 시연" width={900} height={600} className="w-full h-full object-cover" />
+            <Image src="/images/tape/tape-analysis2.jpg" alt="센서 - 앱 연결" width={900} height={600} className="w-full h-full object-cover" />
           </div>
-          <p className="text-xs text-center text-gray-400">결선발표 현장 시연</p>
+          <p className="text-xs text-center text-gray-400">센서 - 앱 연결</p>
         </div>
         <div className="flex flex-col gap-1">
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50" style={{ height: "280px" }}>
-            <Image src="/images/tape/tape-app-live.jpeg" alt="센서 - 앱 연결" width={400} height={800} className="w-full h-full object-contain" />
+            <Image src="/images/tape/tape-app-live.jpeg" alt="결선발표 현장 시연" width={400} height={800} className="w-full h-full object-contain" />
           </div>
-          <p className="text-xs text-center text-gray-400">센서 - 앱 연결</p>
+          <p className="text-xs text-center text-gray-400">결선발표 현장 시연</p>
         </div>
       </div>
 
