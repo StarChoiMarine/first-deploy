@@ -489,21 +489,22 @@ function NewsbalanceContent() {
       {/* 프로젝트 히어로 */}
       <div id="nb-hero" className="relative mb-6 pb-5 border-b border-gray-100">
         <div className="grid grid-cols-2 gap-6 items-stretch">
-          {/* 왼쪽: 텍스트 */}
-          <div className="flex flex-col justify-between relative z-10">
-            <div>
-              <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 03</p>
-              <h3 className="text-4xl font-black text-gray-900 mb-2 leading-tight">NEWSBALANCE</h3>
-              <p className="text-sm text-gray-400 mb-6">2025.03 ~ 2026.06 · 팀장 / 7인 · 논문 제1저자</p>
-              <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
-                유튜브 영상의 <strong className="text-gray-800">편향도와 정확도를 AI로 분석</strong>하고
-                균형잡힌 콘텐츠와 근거 기사를 함께 제공합니다.
-                논문 제1저자 · 팀장으로 기획부터 배포까지 주도했습니다.
-              </p>
+          {/* 왼쪽: 텍스트 + 노트북 화면 */}
+          <div className="flex flex-col relative z-10">
+            <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 03</p>
+            <h3 className="text-4xl font-black text-gray-900 mb-2 leading-tight">NEWSBALANCE</h3>
+            <p className="text-sm text-gray-400 mb-4">2025.03 ~ 2026.06 · 팀장 / 7인 · 논문 제1저자</p>
+            <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5 mb-4" style={{ borderColor: accent }}>
+              유튜브 영상의 <strong className="text-gray-800">편향도와 정확도를 AI로 분석</strong>하고
+              균형잡힌 콘텐츠와 근거 기사를 함께 제공합니다.
+              논문 제1저자 · 팀장으로 기획부터 배포까지 주도했습니다.
+            </p>
+            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-1">
+              <Image src="/images/newsbalance/nb-screen.png" alt="NEWSBALANCE 앱 화면" width={600} height={400} className="w-full h-full object-cover object-top" />
             </div>
-            <div>
-              <p className="text-[10px] font-mono tracking-wider uppercase text-gray-400 mb-2 mt-5">Tech Stack</p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
+            <div className="mt-4">
+              <p className="text-[10px] font-mono tracking-wider uppercase text-gray-400 mb-2">Tech Stack</p>
+              <div className="flex flex-wrap gap-1.5 mb-3">
                 {["Flask", "KcBERT", "Elasticsearch", "PostgreSQL", "Spring Boot", "React", "AWS", "yt-dlp"].map((t) => (
                   <span key={t} className="text-[11px] px-2.5 py-0.5 rounded-md border border-gray-200 text-gray-600 bg-gray-50">{t}</span>
                 ))}
@@ -515,14 +516,9 @@ function NewsbalanceContent() {
               </div>
             </div>
           </div>
-          {/* 오른쪽: 일러스트 + 앱 화면 세로 배치 */}
-          <div className="flex flex-col gap-3">
-            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <Image src="/images/newsbalance/nb-concept-illustration.png" alt="NEWSBALANCE 컨셉 일러스트" width={600} height={400} className="w-full h-auto" />
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <Image src="/images/newsbalance/nb-screen.png" alt="NEWSBALANCE 앱 화면" width={600} height={400} className="w-full h-auto" />
-            </div>
+          {/* 오른쪽: 일러스트 */}
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <Image src="/images/newsbalance/nb-concept-illustration.png" alt="NEWSBALANCE 컨셉 일러스트" width={600} height={400} className="w-full h-auto" />
           </div>
         </div>
       </div>
