@@ -551,7 +551,7 @@ function NewsbalanceContent() {
           <Image src="/images/newsbalance/nb-team-working.png" alt="팀 작업" width={600} height={400} className="w-full h-full object-cover" />
         </div>
         <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/newsbalance/nb-team-exhibition.png" alt="캡스톤 전시" width={600} height={400} className="w-full h-full object-cover" />
+          <Image src="/images/newsbalance/nb-team-exhibition2.png" alt="캡스톤 전시" width={600} height={400} className="w-full h-full object-cover" />
         </div>
       </div>
 
