@@ -111,9 +111,9 @@ export default function PortfolioClient({
                 }
                 transition={{ duration: 0.45, ease: "easeInOut" }}
             >
-                Find rest, O my soul, in God alone; my hope comes from him
+                Whatever you do, work at it with all your heart, as working for the Lord, not for human masters
                 <br />
-                <span>Psalm 62:5</span>
+                <span>Colossians 3:23 (NIV)</span>
             </motion.footer>
 
             {/* ── Resume 풀페이지 ── */}
