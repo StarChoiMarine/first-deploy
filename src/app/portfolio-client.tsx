@@ -98,6 +98,18 @@ export default function PortfolioClient({
                         </button>
                     )}
                 </div>
+
+                {/* 포트폴리오 바로가기 버튼 */}
+                {phase === "main" && (
+                    <div className="mt-8 opacity-0 animate-showCta">
+                        <button
+                            onClick={handleOpenResume}
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/70 text-white text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 cursor-pointer backdrop-blur-sm"
+                        >
+                            포트폴리오 보러가기 →
+                        </button>
+                    </div>
+                )}
             </motion.main>
 
             {/* ── 푸터 ── */}
