@@ -518,7 +518,7 @@ function NewsbalanceContent() {
           </div>
           {/* 오른쪽: 일러스트 */}
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-            <Image src="/images/newsbalance/nb-concept-illustration.png" alt="NEWSBALANCE 컨셉 일러스트" width={600} height={400} className="w-full h-auto" />
+            <Image src="/images/newsbalance/nb-concept2.png" alt="NEWSBALANCE 컨셉 일러스트" width={600} height={400} className="w-full h-auto" />
           </div>
         </div>
       </div>
