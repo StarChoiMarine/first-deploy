@@ -483,9 +483,14 @@ function NewsbalanceContent() {
               </div>
             </div>
           </div>
-          {/* 오른쪽: 이미지 */}
-          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-            <Image src="/images/newsbalance/nb-app-screen.png" alt="NEWSBALANCE 화면" width={600} height={400} className="w-full h-auto" />
+          {/* 오른쪽: 일러스트 + 앱 화면 세로 배치 */}
+          <div className="flex flex-col gap-3">
+            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+              <Image src="/images/newsbalance/nb-concept-illustration.png" alt="NEWSBALANCE 컨셉 일러스트" width={600} height={400} className="w-full h-auto" />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+              <Image src="/images/newsbalance/nb-screen.png" alt="NEWSBALANCE 앱 화면" width={600} height={400} className="w-full h-auto" />
+            </div>
           </div>
         </div>
       </div>
@@ -512,15 +517,8 @@ function NewsbalanceContent() {
         <span style={{ color: accent }} className="font-bold">균형잡힌 콘텐츠와 근거 기사를 자동 제공</span>하여{" "}
         사용자가 스스로 신뢰도를 판단할 수 있게 돕습니다.
       </p>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
-          <Image src="/images/newsbalance/nb-kcbert-diagram.png" alt="KcBERT" width={600} height={200} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 mt-1">KcBERT 편향도 분류 모델</p>
-        </div>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
-          <Image src="/images/newsbalance/nb-model-results.png" alt="모델 결과" width={600} height={200} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 mt-1">파인튜닝 결과 — F1 Macro 0.783</p>
-        </div>
+      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+        <Image src="/images/newsbalance/nb-system-archi.png" alt="시스템 아키텍처" width={1200} height={600} className="w-full h-auto" />
       </div>
 
       {/* 내가 한 것 */}
@@ -545,6 +543,16 @@ function NewsbalanceContent() {
             </ul>
           </div>
         ))}
+      </div>
+      <div className="grid grid-cols-2 gap-2 mb-2">
+        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
+          <Image src="/images/newsbalance/nb-kcbert-diagram.png" alt="KcBERT" width={600} height={200} className="w-full h-auto" />
+          <p className="text-xs text-center text-gray-400 mt-1">KcBERT 편향도 분류 모델</p>
+        </div>
+        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
+          <Image src="/images/newsbalance/nb-model-results.png" alt="모델 결과" width={600} height={200} className="w-full h-auto" />
+          <p className="text-xs text-center text-gray-400 mt-1">파인튜닝 결과 — F1 Macro 0.783</p>
+        </div>
       </div>
       <div className="grid grid-cols-2 gap-2">
         <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
