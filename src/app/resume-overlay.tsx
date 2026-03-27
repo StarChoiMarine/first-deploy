@@ -73,11 +73,16 @@ const PROJECTS = [
 ];
 
 // ── 섹션 레이블 헬퍼 ─────────────────────────────────────
-function SectionLabel({ label, color }: { label: string; color: string }) {
+function SectionLabel({ label, color, letter }: { label: string; color: string; letter: string }) {
   return (
-    <div className="flex items-center gap-2 mt-7 mb-3">
-      <span className="w-[3px] h-4 rounded-full flex-shrink-0" style={{ background: color }} />
-      <span className="text-[10px] font-black uppercase tracking-[0.14em] text-gray-400">{label}</span>
+    <div className="flex items-center gap-3 mt-8 mb-4">
+      <div
+        className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-black flex-shrink-0"
+        style={{ background: color }}
+      >
+        {letter}
+      </div>
+      <span className="text-base font-bold text-gray-900">{label}</span>
     </div>
   );
 }
@@ -88,24 +93,34 @@ function TapeContent() {
   return (
     <div className="text-gray-800 pb-4">
 
-      {/* 개요 */}
-      <SectionLabel label="개요" color={accent} />
-      <div className="flex gap-4 items-start">
-        <div className="flex-1">
-          <h4 className="text-base font-bold text-gray-900 mb-1">센서 기반 AI 러닝 헬스케어 앱</h4>
-          <p className="text-sm text-gray-600 leading-relaxed">
+      {/* 프로젝트 히어로 */}
+      <div className="relative mb-6 pb-5 border-b border-gray-100">
+        <div
+          className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
+          style={{ color: `${accent}10` }}
+        >01</div>
+        <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 01</p>
+        <h3 className="text-3xl font-black text-gray-900 mb-0.5">TAPE</h3>
+        <p className="text-xs text-gray-400 mb-4">2025.04 ~ 2025.11 · 팀장 / 6인</p>
+        <div className="flex gap-4 items-start">
+          <p className="flex-1 text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
             압력센서 인솔로 러닝 데이터를 수집하고 AI로 자세·위험도를 분석해
             <strong className="text-gray-800"> 맞춤형 테이핑 솔루션</strong>을 제공하는 헬스케어 앱.
             React Native 기반 풀스택 개발 + AI 파인튜닝을 팀장으로 주도했습니다.
           </p>
+          <div className="w-36 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <Image src="/images/tape/tape-app-mockup.jpg" alt="TAPE 앱 목업" width={400} height={700} className="w-full h-auto" />
+          </div>
         </div>
-        <div className="w-36 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/tape/tape-app-mockup.jpg" alt="TAPE 앱 목업" width={400} height={700} className="w-full h-auto" />
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {["SW 경진대회 대상", "SW페스티벌 최우수상", "CES 2026"].map((a) => (
+            <span key={a} className="text-[10px] px-2.5 py-0.5 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
+          ))}
         </div>
       </div>
 
       {/* 문제 */}
-      <SectionLabel label="문제" color={accent} />
+      <SectionLabel label="문제" color={accent} letter="P" />
       <div className="grid grid-cols-2 gap-3">
         <div className="p-4 rounded-xl bg-red-50 border border-red-100">
           <p className="text-3xl font-black text-red-500 mb-1">85<span className="text-lg">%</span></p>
@@ -120,7 +135,7 @@ function TapeContent() {
       </div>
 
       {/* 솔루션 */}
-      <SectionLabel label="솔루션" color={accent} />
+      <SectionLabel label="솔루션" color={accent} letter="S" />
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { icon: "👟", title: "압력센서 인솔", desc: "실시간 족압 분포 수집" },
@@ -140,7 +155,7 @@ function TapeContent() {
       </div>
 
       {/* 내가 한 것 */}
-      <SectionLabel label="내가 한 것" color={accent} />
+      <SectionLabel label="내가 한 것" color={accent} letter="R" />
       <div className="grid grid-cols-3 gap-2">
         {[
           { label: "앱 풀스택 개발", contrib: 95, items: ["React Native 앱 구현", "센서 연결 · 데이터 시각화", "서비스 아키텍처 설계"] },
@@ -163,7 +178,7 @@ function TapeContent() {
       </div>
 
       {/* 성과 */}
-      <SectionLabel label="성과" color={accent} />
+      <SectionLabel label="성과" color={accent} letter="🏆" />
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { title: "SW 상상기업 대상", sub: "경기대학교 SW중심대학", color: "bg-blue-50 border-blue-200" },
@@ -218,24 +233,34 @@ function HaiContent() {
   return (
     <div className="text-gray-800 pb-4">
 
-      {/* 개요 */}
-      <SectionLabel label="개요" color={accent} />
-      <div className="flex gap-4 items-start">
-        <div className="flex-1">
-          <h4 className="text-base font-bold text-gray-900 mb-1">Gen AI 기반 AI 역사 디지털 교과서</h4>
-          <p className="text-sm text-gray-600 leading-relaxed">
+      {/* 프로젝트 히어로 */}
+      <div className="relative mb-6 pb-5 border-b border-gray-100">
+        <div
+          className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
+          style={{ color: `${accent}10` }}
+        >02</div>
+        <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 02</p>
+        <h3 className="text-3xl font-black text-gray-900 mb-0.5">H.AI</h3>
+        <p className="text-xs text-gray-400 mb-4">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
+        <div className="flex gap-4 items-start">
+          <p className="flex-1 text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
             지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
-            <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 플랫폼.
-            LG CNS 부트캠프에서 팀장으로 개발을 주도했습니다.
+            <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
+            팀장으로 기획·개발을 주도했습니다.
           </p>
+          <div className="w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
+            <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
+          </div>
         </div>
-        <div className="w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
-          <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {["LG CNS 부트캠프 대상"].map((a) => (
+            <span key={a} className="text-[10px] px-2.5 py-0.5 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
+          ))}
         </div>
       </div>
 
       {/* 시연 영상 */}
-      <SectionLabel label="시연 영상" color={accent} />
+      <SectionLabel label="시연 영상" color={accent} letter="▶" />
       <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{ aspectRatio: "16/9" }}>
         <iframe
           className="w-full h-full"
@@ -247,7 +272,7 @@ function HaiContent() {
       </div>
 
       {/* 문제 */}
-      <SectionLabel label="문제" color={accent} />
+      <SectionLabel label="문제" color={accent} letter="P" />
       <div className="grid grid-cols-3 gap-2">
         {[
           { stat: "텍스트", unit: "중심", desc: "단방향 강의식 수업", color: "bg-red-50 border-red-100 text-red-500" },
@@ -262,7 +287,7 @@ function HaiContent() {
       </div>
 
       {/* 솔루션 */}
-      <SectionLabel label="솔루션" color={accent} />
+      <SectionLabel label="솔루션" color={accent} letter="S" />
       <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-3">
         <Image src="/images/hai/hai-features.png" alt="핵심 기능 3가지" width={1200} height={500} className="w-full h-auto" />
       </div>
@@ -282,7 +307,7 @@ function HaiContent() {
       </div>
 
       {/* 내가 한 것 */}
-      <SectionLabel label="내가 한 것" color={accent} />
+      <SectionLabel label="내가 한 것" color={accent} letter="R" />
       <div className="grid grid-cols-2 gap-2 mb-3">
         {[
           { label: "프로젝트 리딩", contrib: 70, items: ["서비스 방향 및 핵심 기능 정의", "GitHub Projects 일정 관리", "최종 발표 주도"] },
@@ -320,7 +345,7 @@ function HaiContent() {
       </div>
 
       {/* 성과 */}
-      <SectionLabel label="성과" color={accent} />
+      <SectionLabel label="성과" color={accent} letter="🏆" />
       <div className="p-4 rounded-xl border border-green-200 bg-green-50 mb-3">
         <p className="text-sm font-black text-green-700 mb-0.5">🏆 LG CNS AM Inspire 3기 최종프로젝트 대상</p>
         <p className="text-xs text-gray-600">초등학생 12명 현장 테스트 완료 · 울산 호연초등학교</p>
@@ -358,25 +383,34 @@ function NewsbalanceContent() {
   return (
     <div className="text-gray-800 pb-4">
 
-      {/* 개요 */}
-      <SectionLabel label="개요" color={accent} />
-      <div className="flex gap-4 items-start">
-        <div className="flex-1">
-          <h4 className="text-base font-bold text-gray-900 mb-1">AI 기반 유튜브 정치 콘텐츠 분석 플랫폼</h4>
-          <p className="text-sm text-gray-600 leading-relaxed">
+      {/* 프로젝트 히어로 */}
+      <div className="relative mb-6 pb-5 border-b border-gray-100">
+        <div
+          className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
+          style={{ color: `${accent}10` }}
+        >03</div>
+        <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 03</p>
+        <h3 className="text-3xl font-black text-gray-900 mb-0.5">NEWSBALANCE</h3>
+        <p className="text-xs text-gray-400 mb-4">2025.03 ~ 2026.06 · 팀장 / 7인 · 논문 제1저자</p>
+        <div className="flex gap-4 items-start">
+          <p className="flex-1 text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
             유튜브 영상의 <strong className="text-gray-800">편향도와 정확도를 AI로 분석</strong>하고
             균형잡힌 콘텐츠와 근거 기사를 함께 제공합니다.
             논문 제1저자 · 팀장으로 기획부터 배포까지 주도했습니다.
           </p>
+          <div className="w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <Image src="/images/newsbalance/nb-app-screen.png" alt="NEWSBALANCE 화면" width={600} height={400} className="w-full h-auto" />
+          </div>
         </div>
-        <div className="w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/newsbalance/nb-app-screen.png" alt="NEWSBALANCE 화면" width={600} height={400} className="w-full h-auto" />
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {["학술대회 금상 (제1저자)", "SW 저작권 등록"].map((a) => (
+            <span key={a} className="text-[10px] px-2.5 py-0.5 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
+          ))}
         </div>
       </div>
 
-      {/* 서비스 화면 */}
       {/* 문제 */}
-      <SectionLabel label="문제" color={accent} />
+      <SectionLabel label="문제" color={accent} letter="P" />
       <div className="grid grid-cols-2 gap-3">
         <div className="p-4 rounded-xl bg-red-50 border border-red-100">
           <p className="text-3xl font-black text-red-500 mb-1">53<span className="text-lg">%</span></p>
@@ -391,7 +425,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 솔루션 */}
-      <SectionLabel label="솔루션" color={accent} />
+      <SectionLabel label="솔루션" color={accent} letter="S" />
       <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-2">
         <Image src="/images/newsbalance/nb-poster.png" alt="시스템 구성" width={1200} height={900} className="w-full h-auto" />
         <p className="text-xs text-center text-gray-400 py-1">시스템 전체 구성도</p>
@@ -408,7 +442,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 내가 한 것 */}
-      <SectionLabel label="내가 한 것" color={accent} />
+      <SectionLabel label="내가 한 것" color={accent} letter="R" />
       <div className="grid grid-cols-2 gap-2 mb-3">
         {[
           { label: "프로젝트 리딩", contrib: 90, items: ["기획 및 개발과정 주도", "논문 작성·투고 (제1저자)", "최종 발표"] },
@@ -440,7 +474,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 성과 */}
-      <SectionLabel label="성과" color={accent} />
+      <SectionLabel label="성과" color={accent} letter="🏆" />
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { rank: "금상", desc: "한국정보기술학회\n우수논문상 (제1저자)", color: "bg-purple-50 border-purple-200 text-purple-600" },
