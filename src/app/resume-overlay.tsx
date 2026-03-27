@@ -223,6 +223,17 @@ function TapeContent() {
           <p className="text-xs text-center text-gray-400">결선발표 현장 시연</p>
         </div>
       </div>
+      <div className="grid grid-cols-3 gap-2 mt-2">
+        {[
+          { src: "/images/tape/tape-presentation.jpg", alt: "전시 부스" },
+          { src: "/images/tape/tape-presntation2.jpg", alt: "팀원 전시" },
+          { src: "/images/tape/tape-presntation3.jpeg", alt: "팀원 단체" },
+        ].map((img) => (
+          <div key={img.src} className="aspect-video rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+            <Image src={img.src} alt={img.alt} width={400} height={300} className="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
 
       {/* 성과 */}
       <SectionLabel label="성과" color={accent} letter="🏆" id="tape-result" />
