@@ -647,7 +647,7 @@ function NewsbalanceContent() {
         <p className="text-xs text-gray-500 mt-0.5">NewsBalance · 2025.07</p>
       </div>
       {/* 발표 사진 + 라이선스 */}
-      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 2fr" }}>
+      <div className="grid gap-2" style={{ gridTemplateColumns: "2fr 3fr" }}>
         <div className="flex flex-col gap-1">
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
             <Image src="/images/newsbalance/nb-sw-license.png" alt="SW 저작권 등록증" width={400} height={800} className="w-full h-auto" />
