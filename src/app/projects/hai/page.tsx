@@ -66,6 +66,20 @@ export default function HaiPage() {
               <span key={t} className="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full">{t}</span>
             ))}
           </div>
+
+          {/* ── H.AI 키비주얼 ── */}
+          <div className="mt-10 grid sm:grid-cols-2 gap-4">
+            <ImagePlaceholder
+              filename="/images/hai/hai-thumbnail.jpg"
+              label="H.AI 키비주얼 — 한국 지도 + 역사 인물 3D 일러스트 (PDF p.6 왼쪽)"
+              className="min-h-64"
+            />
+            <ImagePlaceholder
+              filename="/images/hai/hai-demo-laptop.jpg"
+              label="서비스 데모 화면 — 랩탑에 표시된 조선시대 지도 + AI 채팅 UI (PDF p.6 오른쪽)"
+              className="min-h-64"
+            />
+          </div>
         </div>
       </section>
 
@@ -129,6 +143,14 @@ export default function HaiPage() {
               <FlowPill>AWS Knowledge Base · RAG 기반 답변 생성</FlowPill>
             </div>
           </div>
+
+          {/* ── Tool Calling 아키텍처 다이어그램 ── */}
+          <div className="mt-4">
+            <ImagePlaceholder
+              filename="/images/hai/hai-toolcalling-diagram.jpg"
+              label="Tool Calling 아키텍처 다이어그램 — AWS Bedrock → Tool 판별 → Django 함수 호출 흐름 (PDF p.9 오른쪽 위)"
+            />
+          </div>
         </section>
 
         {/* Role */}
@@ -164,6 +186,28 @@ export default function HaiPage() {
               </div>
             ))}
           </div>
+
+          {/* ── 역할 관련 사진 2장 ── */}
+          <div className="mt-6 grid sm:grid-cols-2 gap-4">
+            <ImagePlaceholder
+              filename="/images/hai/hai-rag-code.jpg"
+              label="RAG 임베딩 코드 스크린샷 — Knowledge Base 청크 데이터 구조 (PDF p.8 왼쪽 아래)"
+              className="min-h-48"
+            />
+            <ImagePlaceholder
+              filename="/images/hai/hai-usertest.jpg"
+              label="초등학생 시범 수업 사진 — 울산 호연초 12명 대상 H.AI 테스트 현장 (PDF p.9 왼쪽)"
+              className="min-h-48"
+            />
+          </div>
+
+          {/* ── STT/TTS 다이어그램 ── */}
+          <div className="mt-4">
+            <ImagePlaceholder
+              filename="/images/hai/hai-stt-tts-diagram.jpg"
+              label="STT/TTS 파이프라인 다이어그램 — 실시간 음성 인식 → Bedrock AI → Typecast 음성 출력 흐름 (PDF p.9 오른쪽 아래)"
+            />
+          </div>
         </section>
 
         {/* Results */}
@@ -184,6 +228,34 @@ export default function HaiPage() {
               <strong> 평생 잊지 못 할 동료들을 얻었습니다.</strong>
             </p>
           </div>
+
+          {/* ── 수상 사진 3열 ── */}
+          <div className="mt-6 grid sm:grid-cols-3 gap-4">
+            <div>
+              <p className="text-xs font-bold text-green-600 uppercase tracking-wide mb-2">LG CNS 대상 상장</p>
+              <ImagePlaceholder
+                filename="/images/hai/hai-award-lgcns.jpg"
+                label="LG CNS AM Inspire 3기 프로젝트 대상 상장 (PDF p.10 왼쪽)"
+                className="min-h-52"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-green-600 uppercase tracking-wide mb-2">팀 수상 사진</p>
+              <ImagePlaceholder
+                filename="/images/hai/hai-award-team.jpg"
+                label="팀원 전체 수상 사진 — 대상 팻말 들고 기념촬영 (PDF p.10 가운데)"
+                className="min-h-52"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-green-600 uppercase tracking-wide mb-2">팀원들의 선물</p>
+              <ImagePlaceholder
+                filename="/images/hai/hai-shoes.jpg"
+                label="팀원들이 돈 모아 선물해준 신발 사진 (PDF p.10 오른쪽 아래)"
+                className="min-h-52"
+              />
+            </div>
+          </div>
         </section>
 
         {/* 네비 */}
@@ -195,6 +267,18 @@ export default function HaiPage() {
           </Link>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ImagePlaceholder({ filename, label, className = "" }: { filename: string; label: string; className?: string }) {
+  return (
+    <div className={`border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center gap-2 bg-gray-50 p-6 w-full ${className}`}>
+      <svg className="w-10 h-10 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <code className="text-xs text-green-600 text-center break-all">{filename}</code>
+      <p className="text-xs text-gray-400 text-center">{label}</p>
     </div>
   );
 }
