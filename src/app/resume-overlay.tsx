@@ -267,29 +267,23 @@ function HaiContent() {
       {/* 프로젝트 히어로 */}
       <div id="hai-hero" className="relative mb-6 pb-5 border-b border-gray-100">
         {/* 제목 영역 */}
-        <div className="grid grid-cols-2 gap-6 items-start mb-4">
-          <div>
+        <div className="grid grid-cols-2 gap-6 items-stretch mb-4">
+          <div className="flex flex-col">
             <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 02</p>
             <h3 className="text-5xl font-black text-gray-900 mb-2 leading-tight">H.AI</h3>
             <p className="text-sm text-gray-400 mb-4">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
-            <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
+            <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5 mb-4" style={{ borderColor: accent }}>
               지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
               <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
               팀장으로 기획·개발을 주도했습니다.
             </p>
+            {/* 앱 목업 — 설명 바로 아래 */}
+            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-1">
+              <Image src="/images/hai/hai-app-mockup.png" alt="AI 인물 대화 · 지도 시각화" width={900} height={600} className="w-full h-full object-cover" />
+            </div>
           </div>
           {/* 오른쪽: 일러스트 */}
-          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
-            <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
-          </div>
-        </div>
-        {/* 설명 바로 아래: 앱 화면(좌) + 일러스트 자리는 이미 위에, 여기서는 앱 목업(좌) */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-            <Image src="/images/hai/hai-app-mockup.png" alt="AI 인물 대화 · 지도 시각화" width={900} height={600} className="w-full h-auto" />
-            <p className="text-[10px] text-center text-gray-400 py-1">AI 인물 대화 · 지도 시각화</p>
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b] flex items-center justify-center p-4">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b] flex items-center">
             <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
           </div>
         </div>
