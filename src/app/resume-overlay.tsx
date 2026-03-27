@@ -203,15 +203,24 @@ function TapeContent() {
         ))}
       </div>
       {/* 활동 사진: 세로2장(좌,중) + 가로1장(우) */}
-      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 2fr 1fr", height: "300px" }}>
-        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
-          <Image src="/images/tape/tape-app-analysis.jpg" alt="앱 분석 결과" width={400} height={800} className="w-full h-full object-contain" />
+      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 2fr 1fr" }}>
+        <div className="flex flex-col gap-1">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50" style={{ height: "280px" }}>
+            <Image src="/images/tape/tape-app-analysis.jpg" alt="앱 작동 화면" width={400} height={800} className="w-full h-full object-contain" />
+          </div>
+          <p className="text-xs text-center text-gray-400">앱 작동 화면</p>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/tape/tape-analysis2.jpg" alt="현장 시연" width={900} height={600} className="w-full h-full object-cover" />
+        <div className="flex flex-col gap-1">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{ height: "280px" }}>
+            <Image src="/images/tape/tape-analysis2.jpg" alt="결선발표 현장 시연" width={900} height={600} className="w-full h-full object-cover" />
+          </div>
+          <p className="text-xs text-center text-gray-400">결선발표 현장 시연</p>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
-          <Image src="/images/tape/tape-app-live.jpeg" alt="노트북 센서 연결" width={400} height={800} className="w-full h-full object-contain" />
+        <div className="flex flex-col gap-1">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50" style={{ height: "280px" }}>
+            <Image src="/images/tape/tape-app-live.jpeg" alt="센서 - 앱 연결" width={400} height={800} className="w-full h-full object-contain" />
+          </div>
+          <p className="text-xs text-center text-gray-400">센서 - 앱 연결</p>
         </div>
       </div>
 
