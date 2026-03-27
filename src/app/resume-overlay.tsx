@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 type Project = {
   project_name: string;
@@ -53,6 +53,13 @@ const PROJECTS = [
     period: "2025.04 ~ 2025.11 · 팀장 / 6인",
     accent: "#2563EB",
     awards: ["SW 경진대회 대상", "SW페스티벌 최우수상", "CES 2026"],
+    sections: [
+      { label: "개요", id: "tape-hero" },
+      { label: "문제", id: "tape-problem" },
+      { label: "솔루션", id: "tape-solution" },
+      { label: "내가 한 일", id: "tape-role" },
+      { label: "성과", id: "tape-result" },
+    ],
   },
   {
     id: "hai",
@@ -61,6 +68,14 @@ const PROJECTS = [
     period: "2025.10 ~ 2026.01 · 팀장 / 7인",
     accent: "#16A34A",
     awards: ["LG CNS 부트캠프 대상"],
+    sections: [
+      { label: "개요", id: "hai-hero" },
+      { label: "시연영상", id: "hai-demo" },
+      { label: "문제", id: "hai-problem" },
+      { label: "솔루션", id: "hai-solution" },
+      { label: "내가 한 일", id: "hai-role" },
+      { label: "성과", id: "hai-result" },
+    ],
   },
   {
     id: "newsbalance",
@@ -69,13 +84,20 @@ const PROJECTS = [
     period: "2025.03 ~ 2026.06 · 팀장 / 7인",
     accent: "#7C3AED",
     awards: ["학술대회 금상 (제1저자)", "SW 저작권 등록"],
+    sections: [
+      { label: "개요", id: "nb-hero" },
+      { label: "문제", id: "nb-problem" },
+      { label: "솔루션", id: "nb-solution" },
+      { label: "내가 한 일", id: "nb-role" },
+      { label: "성과", id: "nb-result" },
+    ],
   },
 ];
 
 // ── 섹션 레이블 헬퍼 ─────────────────────────────────────
-function SectionLabel({ label, color, letter }: { label: string; color: string; letter: string }) {
+function SectionLabel({ label, color, letter, id }: { label: string; color: string; letter: string; id?: string }) {
   return (
-    <div className="flex items-center gap-3 mt-8 mb-4">
+    <div id={id} className="flex items-center gap-3 mt-8 mb-4">
       <div
         className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-black flex-shrink-0"
         style={{ background: color }}
@@ -94,7 +116,7 @@ function TapeContent() {
     <div className="text-gray-800 pb-4">
 
       {/* 프로젝트 히어로 */}
-      <div className="relative mb-6 pb-5 border-b border-gray-100">
+      <div id="tape-hero" className="relative mb-6 pb-5 border-b border-gray-100">
         <div
           className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
           style={{ color: `${accent}10` }}
@@ -102,13 +124,13 @@ function TapeContent() {
         <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 01</p>
         <h3 className="text-3xl font-black text-gray-900 mb-0.5">TAPE</h3>
         <p className="text-xs text-gray-400 mb-4">2025.04 ~ 2025.11 · 팀장 / 6인</p>
-        <div className="flex gap-4 items-start">
-          <p className="flex-1 text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
+        <div className="grid grid-cols-2 gap-5 items-start">
+          <p className="text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
             압력센서 인솔로 러닝 데이터를 수집하고 AI로 자세·위험도를 분석해
             <strong className="text-gray-800"> 맞춤형 테이핑 솔루션</strong>을 제공하는 헬스케어 앱.
             React Native 기반 풀스택 개발 + AI 파인튜닝을 팀장으로 주도했습니다.
           </p>
-          <div className="w-36 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
             <Image src="/images/tape/tape-app-mockup.jpg" alt="TAPE 앱 목업" width={400} height={700} className="w-full h-auto" />
           </div>
         </div>
@@ -120,7 +142,7 @@ function TapeContent() {
       </div>
 
       {/* 문제 */}
-      <SectionLabel label="문제" color={accent} letter="P" />
+      <SectionLabel label="문제" color={accent} letter="P" id="tape-problem" />
       <div className="grid grid-cols-2 gap-3">
         <div className="p-4 rounded-xl bg-red-50 border border-red-100">
           <p className="text-3xl font-black text-red-500 mb-1">85<span className="text-lg">%</span></p>
@@ -135,7 +157,7 @@ function TapeContent() {
       </div>
 
       {/* 솔루션 */}
-      <SectionLabel label="솔루션" color={accent} letter="S" />
+      <SectionLabel label="솔루션" color={accent} letter="S" id="tape-solution" />
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { icon: "👟", title: "압력센서 인솔", desc: "실시간 족압 분포 수집" },
@@ -155,7 +177,7 @@ function TapeContent() {
       </div>
 
       {/* 내가 한 것 */}
-      <SectionLabel label="내가 한 것" color={accent} letter="R" />
+      <SectionLabel label="내가 한 것" color={accent} letter="R" id="tape-role" />
       <div className="grid grid-cols-3 gap-2">
         {[
           { label: "앱 풀스택 개발", contrib: 95, items: ["React Native 앱 구현", "센서 연결 · 데이터 시각화", "서비스 아키텍처 설계"] },
@@ -178,7 +200,7 @@ function TapeContent() {
       </div>
 
       {/* 성과 */}
-      <SectionLabel label="성과" color={accent} letter="🏆" />
+      <SectionLabel label="성과" color={accent} letter="🏆" id="tape-result" />
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { title: "SW 상상기업 대상", sub: "경기대학교 SW중심대학", color: "bg-blue-50 border-blue-200" },
@@ -234,7 +256,7 @@ function HaiContent() {
     <div className="text-gray-800 pb-4">
 
       {/* 프로젝트 히어로 */}
-      <div className="relative mb-6 pb-5 border-b border-gray-100">
+      <div id="hai-hero" className="relative mb-6 pb-5 border-b border-gray-100">
         <div
           className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
           style={{ color: `${accent}10` }}
@@ -242,13 +264,13 @@ function HaiContent() {
         <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 02</p>
         <h3 className="text-3xl font-black text-gray-900 mb-0.5">H.AI</h3>
         <p className="text-xs text-gray-400 mb-4">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
-        <div className="flex gap-4 items-start">
-          <p className="flex-1 text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
+        <div className="grid grid-cols-2 gap-5 items-start">
+          <p className="text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
             지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
             <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
             팀장으로 기획·개발을 주도했습니다.
           </p>
-          <div className="w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
             <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
           </div>
         </div>
@@ -260,7 +282,7 @@ function HaiContent() {
       </div>
 
       {/* 시연 영상 */}
-      <SectionLabel label="시연 영상" color={accent} letter="▶" />
+      <SectionLabel label="시연 영상" color={accent} letter="▶" id="hai-demo" />
       <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{ aspectRatio: "16/9" }}>
         <iframe
           className="w-full h-full"
@@ -272,7 +294,7 @@ function HaiContent() {
       </div>
 
       {/* 문제 */}
-      <SectionLabel label="문제" color={accent} letter="P" />
+      <SectionLabel label="문제" color={accent} letter="P" id="hai-problem" />
       <div className="grid grid-cols-3 gap-2">
         {[
           { stat: "텍스트", unit: "중심", desc: "단방향 강의식 수업", color: "bg-red-50 border-red-100 text-red-500" },
@@ -287,7 +309,7 @@ function HaiContent() {
       </div>
 
       {/* 솔루션 */}
-      <SectionLabel label="솔루션" color={accent} letter="S" />
+      <SectionLabel label="솔루션" color={accent} letter="S" id="hai-solution" />
       <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-3">
         <Image src="/images/hai/hai-features.png" alt="핵심 기능 3가지" width={1200} height={500} className="w-full h-auto" />
       </div>
@@ -307,7 +329,7 @@ function HaiContent() {
       </div>
 
       {/* 내가 한 것 */}
-      <SectionLabel label="내가 한 것" color={accent} letter="R" />
+      <SectionLabel label="내가 한 것" color={accent} letter="R" id="hai-role" />
       <div className="grid grid-cols-2 gap-2 mb-3">
         {[
           { label: "프로젝트 리딩", contrib: 70, items: ["서비스 방향 및 핵심 기능 정의", "GitHub Projects 일정 관리", "최종 발표 주도"] },
@@ -345,7 +367,7 @@ function HaiContent() {
       </div>
 
       {/* 성과 */}
-      <SectionLabel label="성과" color={accent} letter="🏆" />
+      <SectionLabel label="성과" color={accent} letter="🏆" id="hai-result" />
       <div className="p-4 rounded-xl border border-green-200 bg-green-50 mb-3">
         <p className="text-sm font-black text-green-700 mb-0.5">🏆 LG CNS AM Inspire 3기 최종프로젝트 대상</p>
         <p className="text-xs text-gray-600">초등학생 12명 현장 테스트 완료 · 울산 호연초등학교</p>
@@ -384,7 +406,7 @@ function NewsbalanceContent() {
     <div className="text-gray-800 pb-4">
 
       {/* 프로젝트 히어로 */}
-      <div className="relative mb-6 pb-5 border-b border-gray-100">
+      <div id="nb-hero" className="relative mb-6 pb-5 border-b border-gray-100">
         <div
           className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
           style={{ color: `${accent}10` }}
@@ -392,13 +414,13 @@ function NewsbalanceContent() {
         <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 03</p>
         <h3 className="text-3xl font-black text-gray-900 mb-0.5">NEWSBALANCE</h3>
         <p className="text-xs text-gray-400 mb-4">2025.03 ~ 2026.06 · 팀장 / 7인 · 논문 제1저자</p>
-        <div className="flex gap-4 items-start">
-          <p className="flex-1 text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
+        <div className="grid grid-cols-2 gap-5 items-start">
+          <p className="text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
             유튜브 영상의 <strong className="text-gray-800">편향도와 정확도를 AI로 분석</strong>하고
             균형잡힌 콘텐츠와 근거 기사를 함께 제공합니다.
             논문 제1저자 · 팀장으로 기획부터 배포까지 주도했습니다.
           </p>
-          <div className="w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
             <Image src="/images/newsbalance/nb-app-screen.png" alt="NEWSBALANCE 화면" width={600} height={400} className="w-full h-auto" />
           </div>
         </div>
@@ -410,7 +432,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 문제 */}
-      <SectionLabel label="문제" color={accent} letter="P" />
+      <SectionLabel label="문제" color={accent} letter="P" id="nb-problem" />
       <div className="grid grid-cols-2 gap-3">
         <div className="p-4 rounded-xl bg-red-50 border border-red-100">
           <p className="text-3xl font-black text-red-500 mb-1">53<span className="text-lg">%</span></p>
@@ -425,11 +447,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 솔루션 */}
-      <SectionLabel label="솔루션" color={accent} letter="S" />
-      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-2">
-        <Image src="/images/newsbalance/nb-poster.png" alt="시스템 구성" width={1200} height={900} className="w-full h-auto" />
-        <p className="text-xs text-center text-gray-400 py-1">시스템 전체 구성도</p>
-      </div>
+      <SectionLabel label="솔루션" color={accent} letter="S" id="nb-solution" />
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
           <Image src="/images/newsbalance/nb-kcbert-diagram.png" alt="KcBERT" width={600} height={200} className="w-full h-auto" />
@@ -442,7 +460,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 내가 한 것 */}
-      <SectionLabel label="내가 한 것" color={accent} letter="R" />
+      <SectionLabel label="내가 한 것" color={accent} letter="R" id="nb-role" />
       <div className="grid grid-cols-2 gap-2 mb-3">
         {[
           { label: "프로젝트 리딩", contrib: 90, items: ["기획 및 개발과정 주도", "논문 작성·투고 (제1저자)", "최종 발표"] },
@@ -474,7 +492,7 @@ function NewsbalanceContent() {
       </div>
 
       {/* 성과 */}
-      <SectionLabel label="성과" color={accent} letter="🏆" />
+      <SectionLabel label="성과" color={accent} letter="🏆" id="nb-result" />
       <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { rank: "금상", desc: "한국정보기술학회\n우수논문상 (제1저자)", color: "bg-purple-50 border-purple-200 text-purple-600" },
@@ -522,6 +540,22 @@ export default function ResumeOverlay({
 }) {
   const [selectedProject, setSelectedProject] = useState("tape");
   const selected = PROJECTS.find((p) => p.id === selectedProject)!;
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleProjectSelect = (id: string) => {
+    setSelectedProject(id);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  };
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    const container = scrollContainerRef.current;
+    if (!el || !container) return;
+    const top = el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop - 16;
+    container.scrollTo({ top, behavior: "smooth" });
+  };;
 
   return (
     <div className="relative w-[92%] max-w-7xl mx-auto py-10 sm:py-16 px-6 sm:px-10">
@@ -634,11 +668,13 @@ export default function ResumeOverlay({
       </div>
 
       {/* ── Key Projects 2-panel 카드 ── */}
-      <section>
-        <h3 className="text-2xl font-semibold text-white mb-4 pb-3 border-b border-white/20">Key Projects</h3>
+      <section className="-mx-6 sm:-mx-10">
+        <div className="px-6 sm:px-10 mb-4">
+          <h3 className="text-2xl font-semibold text-white pb-3 border-b border-white/20">Key Projects</h3>
+        </div>
 
-        {/* 카드 — 흰 배경, 좌우 분할 */}
-        <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex" style={{ minHeight: "520px" }}>
+        {/* 카드 — 흰 배경, 좌우 분할, 고정 높이 */}
+        <div className="bg-white sm:rounded-2xl overflow-hidden shadow-2xl flex" style={{ height: "calc(100vh - 3rem)" }}>
 
           {/* LEFT: 프로젝트 목록 */}
           <div className="w-56 flex-shrink-0 border-r border-gray-100 bg-gray-50/80 flex flex-col">
@@ -649,7 +685,7 @@ export default function ResumeOverlay({
               {PROJECTS.map((p) => (
                 <button
                   key={p.id}
-                  onClick={() => setSelectedProject(p.id)}
+                  onClick={() => handleProjectSelect(p.id)}
                   className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-150 ${
                     selectedProject === p.id
                       ? "bg-white shadow-sm border border-gray-200"
@@ -667,24 +703,37 @@ export default function ResumeOverlay({
           </div>
 
           {/* RIGHT: 선택된 프로젝트 상세 */}
-          <div className="flex-1 overflow-y-auto">
-            {/* 상단 헤더 */}
-            <div className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-8 py-4 flex items-center justify-between z-10">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: selected.accent }}>
-                  KEY PROJECT
-                </p>
-                <h4 className="text-xl font-black text-gray-900">{selected.name}
-                  <span className="text-sm font-normal text-gray-400 ml-2">{selected.subtitle}</span>
-                </h4>
-                <p className="text-xs text-gray-400 mt-0.5">{selected.period}</p>
+          <div ref={scrollContainerRef} className="flex-1 overflow-y-auto">
+            {/* 상단 헤더 (sticky) */}
+            <div className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-10">
+              <div className="px-8 py-3 flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: selected.accent }}>
+                    KEY PROJECT
+                  </p>
+                  <h4 className="text-xl font-black text-gray-900">{selected.name}
+                    <span className="text-sm font-normal text-gray-400 ml-2">{selected.subtitle}</span>
+                  </h4>
+                </div>
+                <div className="flex flex-wrap gap-1.5 justify-end max-w-xs">
+                  {selected.awards.map((a) => (
+                    <span key={a} className="text-xs px-2.5 py-1 rounded-full font-medium border"
+                      style={{ color: selected.accent, borderColor: selected.accent + "44", background: selected.accent + "11" }}>
+                      {a}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-1.5 justify-end max-w-xs">
-                {selected.awards.map((a) => (
-                  <span key={a} className="text-xs px-2.5 py-1 rounded-full font-medium border"
-                    style={{ color: selected.accent, borderColor: selected.accent + "44", background: selected.accent + "11" }}>
-                    {a}
-                  </span>
+              {/* 섹션 점프 버튼 */}
+              <div className="px-8 pb-2.5 flex gap-2 overflow-x-auto">
+                {selected.sections.map((s) => (
+                  <button
+                    key={s.id}
+                    onClick={() => scrollToSection(s.id)}
+                    className="flex-shrink-0 text-[11px] font-medium px-3 py-1 rounded-full border border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-800 transition-colors cursor-pointer"
+                  >
+                    {s.label}
+                  </button>
                 ))}
               </div>
             </div>
@@ -697,6 +746,32 @@ export default function ResumeOverlay({
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* ── Contact ── */}
+      <section className="-mx-6 sm:-mx-10 mt-px">
+        <div className="px-6 sm:px-10 py-16 text-center">
+          <h3 className="text-3xl font-bold text-white mb-2">Contact</h3>
+          <p className="text-white/60 text-sm mb-8">함께 만들 수 있는 것이 있다면 편하게 연락주세요</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a
+              href={generalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 px-8 py-3.5 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              <span className="text-lg">🐙</span>
+              <span>GitHub</span>
+            </a>
+            <a
+              href={`mailto:${generalInfo.email}`}
+              className="flex items-center gap-2.5 px-8 py-3.5 border-2 border-white/40 text-white rounded-xl font-semibold hover:bg-white/10 transition-colors"
+            >
+              <span className="text-lg">✉️</span>
+              <span>{generalInfo.email}</span>
+            </a>
+          </div>
         </div>
       </section>
 
