@@ -117,27 +117,29 @@ function TapeContent() {
 
       {/* 프로젝트 히어로 */}
       <div id="tape-hero" className="relative mb-6 pb-5 border-b border-gray-100">
-        <div
-          className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
-          style={{ color: `${accent}10` }}
-        >01</div>
-        <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 01</p>
-        <h3 className="text-3xl font-black text-gray-900 mb-0.5">TAPE</h3>
-        <p className="text-xs text-gray-400 mb-4">2025.04 ~ 2025.11 · 팀장 / 6인</p>
-        <div className="grid grid-cols-2 gap-5 items-start">
-          <p className="text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
-            압력센서 인솔로 러닝 데이터를 수집하고 AI로 자세·위험도를 분석해
-            <strong className="text-gray-800"> 맞춤형 테이핑 솔루션</strong>을 제공하는 헬스케어 앱.
-            React Native 기반 풀스택 개발 + AI 파인튜닝을 팀장으로 주도했습니다.
-          </p>
+        <div className="grid grid-cols-2 gap-6 items-stretch">
+          {/* 왼쪽: 텍스트 */}
+          <div className="flex flex-col justify-between relative z-10">
+            <div>
+              <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 01</p>
+              <h3 className="text-5xl font-black text-gray-900 mb-2 leading-tight">TAPE</h3>
+              <p className="text-sm text-gray-400 mb-6">2025.04 ~ 2025.11 · 팀장 / 6인</p>
+              <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
+                압력센서 인솔로 러닝 데이터를 수집하고 AI로 자세·위험도를 분석해
+                <strong className="text-gray-800"> 맞춤형 테이핑 솔루션</strong>을 제공하는 헬스케어 앱.
+                React Native 기반 풀스택 개발 + AI 파인튜닝을 팀장으로 주도했습니다.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 mt-6">
+              {["SW 경진대회 대상", "SW페스티벌 최우수상", "CES 2026"].map((a) => (
+                <span key={a} className="text-[11px] px-3 py-1 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
+              ))}
+            </div>
+          </div>
+          {/* 오른쪽: 이미지 */}
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
             <Image src="/images/tape/tape-app-mockup.jpg" alt="TAPE 앱 목업" width={400} height={700} className="w-full h-auto" />
           </div>
-        </div>
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {["SW 경진대회 대상", "SW페스티벌 최우수상", "CES 2026"].map((a) => (
-            <span key={a} className="text-[10px] px-2.5 py-0.5 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
-          ))}
         </div>
       </div>
 
@@ -257,27 +259,29 @@ function HaiContent() {
 
       {/* 프로젝트 히어로 */}
       <div id="hai-hero" className="relative mb-6 pb-5 border-b border-gray-100">
-        <div
-          className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
-          style={{ color: `${accent}10` }}
-        >02</div>
-        <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 02</p>
-        <h3 className="text-3xl font-black text-gray-900 mb-0.5">H.AI</h3>
-        <p className="text-xs text-gray-400 mb-4">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
-        <div className="grid grid-cols-2 gap-5 items-start">
-          <p className="text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
-            지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
-            <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
-            팀장으로 기획·개발을 주도했습니다.
-          </p>
+        <div className="grid grid-cols-2 gap-6 items-stretch">
+          {/* 왼쪽: 텍스트 */}
+          <div className="flex flex-col justify-between relative z-10">
+            <div>
+              <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 02</p>
+              <h3 className="text-5xl font-black text-gray-900 mb-2 leading-tight">H.AI</h3>
+              <p className="text-sm text-gray-400 mb-6">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
+              <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
+                지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
+                <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
+                팀장으로 기획·개발을 주도했습니다.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 mt-6">
+              {["LG CNS 부트캠프 대상"].map((a) => (
+                <span key={a} className="text-[11px] px-3 py-1 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
+              ))}
+            </div>
+          </div>
+          {/* 오른쪽: 이미지 */}
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
             <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
           </div>
-        </div>
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {["LG CNS 부트캠프 대상"].map((a) => (
-            <span key={a} className="text-[10px] px-2.5 py-0.5 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
-          ))}
         </div>
       </div>
 
@@ -407,27 +411,29 @@ function NewsbalanceContent() {
 
       {/* 프로젝트 히어로 */}
       <div id="nb-hero" className="relative mb-6 pb-5 border-b border-gray-100">
-        <div
-          className="absolute top-0 right-0 text-[6rem] font-black leading-none select-none pointer-events-none"
-          style={{ color: `${accent}10` }}
-        >03</div>
-        <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-1" style={{ color: accent }}>PROJECT 03</p>
-        <h3 className="text-3xl font-black text-gray-900 mb-0.5">NEWSBALANCE</h3>
-        <p className="text-xs text-gray-400 mb-4">2025.03 ~ 2026.06 · 팀장 / 7인 · 논문 제1저자</p>
-        <div className="grid grid-cols-2 gap-5 items-start">
-          <p className="text-sm text-gray-600 leading-relaxed border-l-[3px] pl-4" style={{ borderColor: accent }}>
-            유튜브 영상의 <strong className="text-gray-800">편향도와 정확도를 AI로 분석</strong>하고
-            균형잡힌 콘텐츠와 근거 기사를 함께 제공합니다.
-            논문 제1저자 · 팀장으로 기획부터 배포까지 주도했습니다.
-          </p>
+        <div className="grid grid-cols-2 gap-6 items-stretch">
+          {/* 왼쪽: 텍스트 */}
+          <div className="flex flex-col justify-between relative z-10">
+            <div>
+              <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 03</p>
+              <h3 className="text-4xl font-black text-gray-900 mb-2 leading-tight">NEWSBALANCE</h3>
+              <p className="text-sm text-gray-400 mb-6">2025.03 ~ 2026.06 · 팀장 / 7인 · 논문 제1저자</p>
+              <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
+                유튜브 영상의 <strong className="text-gray-800">편향도와 정확도를 AI로 분석</strong>하고
+                균형잡힌 콘텐츠와 근거 기사를 함께 제공합니다.
+                논문 제1저자 · 팀장으로 기획부터 배포까지 주도했습니다.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1.5 mt-6">
+              {["학술대회 금상 (제1저자)", "SW 저작권 등록"].map((a) => (
+                <span key={a} className="text-[11px] px-3 py-1 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
+              ))}
+            </div>
+          </div>
+          {/* 오른쪽: 이미지 */}
           <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
             <Image src="/images/newsbalance/nb-app-screen.png" alt="NEWSBALANCE 화면" width={600} height={400} className="w-full h-auto" />
           </div>
-        </div>
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {["학술대회 금상 (제1저자)", "SW 저작권 등록"].map((a) => (
-            <span key={a} className="text-[10px] px-2.5 py-0.5 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
-          ))}
         </div>
       </div>
 
