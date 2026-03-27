@@ -182,7 +182,7 @@ function TapeContent() {
 
       {/* 내가 한 것 */}
       <SectionLabel label="내가 한 것" color={accent} letter="R" id="tape-role" />
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { label: "앱 풀스택 개발", contrib: 95, items: ["React Native 앱 구현", "센서 연결 · 데이터 시각화", "서비스 아키텍처 설계"] },
           { label: "AI 모델 파인튜닝", contrib: 70, items: ["보행 패턴 분류 모델 구축", "모델 성능 개선", "AI Agent 기능 추가"] },
@@ -201,6 +201,21 @@ function TapeContent() {
             </ul>
           </div>
         ))}
+      </div>
+      {/* 활동 사진 2×2 */}
+      <div className="grid grid-cols-2 gap-2">
+        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <Image src="/images/tape/tape-app-live.jpeg" alt="앱 실사용" width={600} height={338} className="w-full h-full object-cover" />
+        </div>
+        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <Image src="/images/tape/tape-app-analysis.jpg" alt="AI 분석 화면" width={600} height={338} className="w-full h-full object-cover" />
+        </div>
+        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <Image src="/images/tape/tape-analysis2.jpg" alt="보행 분석 결과" width={600} height={338} className="w-full h-full object-cover" />
+        </div>
+        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <Image src="/images/tape/tape-presntation2.jpeg" alt="발표" width={600} height={338} className="w-full h-full object-cover" />
+        </div>
       </div>
 
       {/* 성과 */}
