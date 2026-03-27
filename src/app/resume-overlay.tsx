@@ -266,43 +266,42 @@ function HaiContent() {
 
       {/* 프로젝트 히어로 */}
       <div id="hai-hero" className="relative mb-6 pb-5 border-b border-gray-100">
-        <div className="grid grid-cols-2 gap-6 items-stretch">
-          {/* 왼쪽: 텍스트 */}
-          <div className="flex flex-col justify-between relative z-10">
-            <div>
-              <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 02</p>
-              <h3 className="text-5xl font-black text-gray-900 mb-2 leading-tight">H.AI</h3>
-              <p className="text-sm text-gray-400 mb-6">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
-              <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
-                지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
-                <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
-                팀장으로 기획·개발을 주도했습니다.
-              </p>
-            </div>
-            <div>
-              <p className="text-[10px] font-mono tracking-wider uppercase text-gray-400 mb-2 mt-5">Tech Stack</p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {["AWS Bedrock", "OpenSearch", "RAG", "Django", "React", "STT/TTS", "Tool Calling"].map((t) => (
-                  <span key={t} className="text-[11px] px-2.5 py-0.5 rounded-md border border-gray-200 text-gray-600 bg-gray-50">{t}</span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {["LG CNS 부트캠프 대상"].map((a) => (
-                  <span key={a} className="text-[11px] px-3 py-1 rounded-full font-semibold text-white" style={{ background: accent }}>{a}</span>
-                ))}
-              </div>
-            </div>
+        {/* 제목 영역 */}
+        <div className="grid grid-cols-2 gap-6 items-start mb-4">
+          <div>
+            <p className="text-xs font-mono tracking-[0.25em] uppercase mb-3" style={{ color: accent }}>PROJECT 02</p>
+            <h3 className="text-5xl font-black text-gray-900 mb-2 leading-tight">H.AI</h3>
+            <p className="text-sm text-gray-400 mb-4">2025.10 ~ 2026.01 · 팀장 / 7인 · LG CNS AM Inspire 3기</p>
+            <p className="text-lg text-gray-600 leading-relaxed border-l-[3px] pl-5" style={{ borderColor: accent }}>
+              지도 위를 움직이는 캐릭터, 역사 인물과의 AI 대화, 실시간 토론까지 —
+              <strong className="text-gray-800"> 학생 참여 중심</strong>의 역사 수업을 만드는 Gen AI 플랫폼.
+              팀장으로 기획·개발을 주도했습니다.
+            </p>
           </div>
-          {/* 오른쪽: 히어로 일러스트 + 앱 화면 */}
-          <div className="flex flex-col gap-2">
-            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
-              <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <Image src="/images/hai/hai-app-mockup.png" alt="AI 인물 대화 · 지도 시각화" width={900} height={600} className="w-full h-auto" />
-              <p className="text-[10px] text-center text-gray-400 py-1">AI 인물 대화 · 지도 시각화</p>
-            </div>
+          {/* 오른쪽: 일러스트 */}
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b]">
+            <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
           </div>
+        </div>
+        {/* 설명 바로 아래: 앱 화면(좌) + 일러스트 자리는 이미 위에, 여기서는 앱 목업(좌) */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <Image src="/images/hai/hai-app-mockup.png" alt="AI 인물 대화 · 지도 시각화" width={900} height={600} className="w-full h-auto" />
+            <p className="text-[10px] text-center text-gray-400 py-1">AI 인물 대화 · 지도 시각화</p>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-[#0d2b2b] flex items-center justify-center p-4">
+            <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 일러스트" width={400} height={400} className="w-full h-auto" />
+          </div>
+        </div>
+        {/* 기술스택 + 수상 */}
+        <div>
+          <p className="text-[10px] font-mono tracking-wider uppercase text-gray-400 mb-2">Tech Stack</p>
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {["AWS Bedrock", "OpenSearch", "RAG", "Django", "React", "STT/TTS", "Tool Calling"].map((t) => (
+              <span key={t} className="text-[11px] px-2.5 py-0.5 rounded-md border border-gray-200 text-gray-600 bg-gray-50">{t}</span>
+            ))}
+          </div>
+          <span className="text-[11px] px-3 py-1 rounded-full font-semibold text-white" style={{ background: accent }}>LG CNS 부트캠프 대상</span>
         </div>
       </div>
 
@@ -320,7 +319,7 @@ function HaiContent() {
 
       {/* 문제 */}
       <SectionLabel label="문제" color={accent} letter="P" id="hai-problem" />
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-2 mb-3">
         {[
           { stat: "텍스트", unit: "중심", desc: "단방향 강의식 수업", color: "bg-red-50 border-red-100 text-red-500" },
           { stat: "낮은", unit: "참여도", desc: "수업 집중력 저하", color: "bg-orange-50 border-orange-100 text-orange-500" },
@@ -332,6 +331,11 @@ function HaiContent() {
           </div>
         ))}
       </div>
+      {/* 실시간 토론 다이어그램 — 두 번째 줄 전체 */}
+      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+        <Image src="/images/hai/hai-debate-diagram.png" alt="실시간 온라인 토론" width={1200} height={500} className="w-full h-auto" />
+        <p className="text-xs text-center text-gray-400 py-1">실시간 온라인 토론 — AI 사회자 · 결과 자동 요약</p>
+      </div>
 
       {/* 솔루션 */}
       <SectionLabel label="솔루션" color={accent} letter="S" id="hai-solution" />
@@ -340,18 +344,8 @@ function HaiContent() {
         Gen AI로 역사 인물과 <span style={{ color: accent }} className="font-bold">직접 대화하며</span> 배울 수 있습니다.{" "}
         AI 사회자가 진행하는 <span style={{ color: accent }} className="font-bold">실시간 토론방</span>에서 자유롭게 토론하고 결과를 자동 요약합니다.
       </p>
-      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-3">
+      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
         <Image src="/images/hai/hai-features.png" alt="핵심 기능 3가지" width={1200} height={500} className="w-full h-auto" />
-      </div>
-      <div className="grid grid-cols-2 gap-2 mb-2">
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/hai/hai-app-screen.png" alt="H.AI 앱 화면" width={900} height={600} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 py-1">조선시대 — 임진왜란 지도 탐색</p>
-        </div>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/hai/hai-debate-diagram.png" alt="실시간 온라인 토론" width={1200} height={500} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 py-1">실시간 온라인 토론 — AI 사회자 · 결과 자동 요약</p>
-        </div>
       </div>
 
       {/* 내가 한 것 */}
@@ -379,66 +373,74 @@ function HaiContent() {
       </div>
       <div className="grid grid-cols-3 gap-2">
         <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
-          <Image src="/images/hai/hai-tool-calling.png" alt="Tool Calling" width={600} height={300} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 mt-1">Tool Calling 구조</p>
+          <Image src="/images/hai/hai-app-screen.png" alt="AI Agent 구현" width={600} height={300} className="w-full h-auto" />
+          <p className="text-xs text-center text-gray-400 mt-1">AI Agent 구현</p>
         </div>
         <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
           <Image src="/images/hai/hai-rag-diagram.png" alt="RAG" width={600} height={300} className="w-full h-auto" />
           <p className="text-xs text-center text-gray-400 mt-1">RAG 파이프라인</p>
         </div>
         <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
-          <Image src="/images/hai/hai-stt-diagram.png" alt="STT" width={600} height={300} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 mt-1">STT 음성 인식</p>
+          <Image src="/images/hai/hai-presentation.png" alt="최종 발표" width={600} height={300} className="w-full h-full object-cover" />
+          <p className="text-xs text-center text-gray-400 mt-1">최종 발표</p>
         </div>
       </div>
 
       {/* 문제 해결 사례 */}
       <SectionLabel label="문제 해결 사례" color={accent} letter="💡" id="hai-case" />
+      {/* 상황 + 학생 사진 */}
       <div className="p-4 rounded-xl bg-gray-50 border border-gray-100 mb-3">
         <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">🔍 상황</p>
-        <p className="text-sm text-gray-600 leading-relaxed">
+        <p className="text-sm text-gray-600 leading-relaxed mb-3">
           마지막 스프린트를 앞두고 초등학교 저학년 12명을 대상으로 시범 배포를 진행했을 때,
           UI/UX가 익숙하지 않아 기능 호출이 어렵고 <strong className="text-gray-700">타자 입력에 불편함</strong>을 겪는 두 가지 문제가 발생했습니다.
         </p>
-      </div>
-      <div className="space-y-2 mb-3">
-        {[
-          "Tool-calling을 활용해 자연어 명령으로 시스템 기능 호출이 가능하도록 개선",
-          "AI 인물과의 대화에 STT/TTS를 도입하여 타자 없이 말로 대화할 수 있게 함",
-        ].map((sol) => (
-          <div key={sol} className="flex gap-3 text-sm">
-            <span className="font-black flex-shrink-0 text-base" style={{ color: accent }}>→</span>
-            <span className="text-gray-700">{sol}</span>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
+            <Image src="/images/hai/hai-usertest-classroom.png" alt="호연초 수업 현장" width={600} height={400} className="w-full h-full object-cover" />
           </div>
-        ))}
+          <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
+            <Image src="/images/hai/hai-usertest-group.png" alt="호연초 단체사진" width={600} height={400} className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+      {/* 해결 1: Tool-calling */}
+      <div className="flex gap-3 text-sm mb-2">
+        <span className="font-black flex-shrink-0 text-base" style={{ color: accent }}>→</span>
+        <span className="text-gray-700">Tool-calling을 활용해 자연어 명령으로 시스템 기능 호출이 가능하도록 개선</span>
+      </div>
+      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3 mb-3">
+        <Image src="/images/hai/hai-tool-calling.png" alt="Tool Calling 구조" width={600} height={300} className="w-full h-auto" />
+        <p className="text-xs text-center text-gray-400 mt-1">Tool Calling 구조</p>
+      </div>
+      {/* 해결 2: STT/TTS */}
+      <div className="flex gap-3 text-sm mb-2">
+        <span className="font-black flex-shrink-0 text-base" style={{ color: accent }}>→</span>
+        <span className="text-gray-700">AI 인물과의 대화에 STT/TTS를 도입하여 타자 없이 말로 대화할 수 있게 함</span>
+      </div>
+      <div className="grid grid-cols-2 gap-2 mb-3">
+        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
+          <Image src="/images/hai/hai-stt-diagram.png" alt="STT 음성 인식" width={600} height={300} className="w-full h-auto" />
+          <p className="text-xs text-center text-gray-400 mt-1">STT 음성 인식</p>
+        </div>
+        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white p-3">
+          <Image src="/images/hai/hai-tts-diagram.png" alt="TTS 음성 출력" width={600} height={300} className="w-full h-auto" />
+          <p className="text-xs text-center text-gray-400 mt-1">TTS 음성 출력</p>
+        </div>
       </div>
 
       {/* 성과 */}
       <SectionLabel label="성과" color={accent} letter="🏆" id="hai-result" />
-      {/* 수상명 + 상장 */}
       <div className="flex justify-center mb-4">
         <div className="w-64">
           <div className="p-3 rounded-xl border text-center bg-green-50 border-green-200 mb-2">
             <p className="text-sm font-black text-green-700">LG CNS AM Inspire 3기 대상</p>
-            <p className="text-xs text-gray-500 mt-0.5">초등학생 12명 현장 테스트 완료 · 울산 호연초등학교</p>
+            <p className="text-xs text-gray-500 mt-0.5">울산 호연초등학교 · 현장 테스트 완료</p>
           </div>
           <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
             <Image src="/images/hai/hai-award-certificate.png" alt="대상 상장" width={600} height={800} className="w-full h-auto" />
           </div>
         </div>
-      </div>
-      {/* 수상 사진들 */}
-      <div className="grid grid-cols-2 gap-2 mb-2">
-        <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/hai/hai-usertest-classroom.png" alt="호연초 수업 현장" width={600} height={400} className="w-full h-full object-cover" />
-        </div>
-        <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/hai/hai-usertest-group.png" alt="호연초 단체사진" width={600} height={400} className="w-full h-full object-cover" />
-        </div>
-      </div>
-      <div className="aspect-video rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-2">
-        <Image src="/images/hai/hai-presentation.png" alt="발표 현장" width={800} height={600} className="w-full h-full object-cover" />
-        <p className="text-xs text-center text-gray-400 py-1">LG CNS 부트캠프 최종 발표</p>
       </div>
       <div className="rounded-xl overflow-hidden shadow-sm">
         <Image src="/images/hai/hai-award-team.png" alt="수상 팀" width={1200} height={800} className="w-full h-auto" />
