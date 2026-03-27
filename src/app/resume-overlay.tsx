@@ -202,19 +202,20 @@ function TapeContent() {
           </div>
         ))}
       </div>
-      {/* 활동 사진 2×2 */}
-      <div className="grid grid-cols-2 gap-2">
-        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/tape/tape-app-live.jpeg" alt="앱 실사용" width={600} height={338} className="w-full h-full object-cover" />
+      {/* 활동 사진: 좌-세로 1장 / 우-위아래 2장 */}
+      <div className="grid grid-cols-2 gap-2" style={{ height: "420px" }}>
+        {/* 왼쪽: AI 분석 화면 — 세로로 꽉 채움 */}
+        <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <Image src="/images/tape/tape-app-analysis.jpg" alt="AI 분석 화면" width={600} height={900} className="w-full h-full object-cover object-top" />
         </div>
-        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/tape/tape-app-analysis.jpg" alt="AI 분석 화면" width={600} height={338} className="w-full h-full object-cover" />
-        </div>
-        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/tape/tape-analysis2.jpg" alt="보행 분석 결과" width={600} height={338} className="w-full h-full object-cover" />
-        </div>
-        <div className="aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <Image src="/images/tape/tape-presntation2.jpeg" alt="발표" width={600} height={338} className="w-full h-full object-cover" />
+        {/* 오른쪽: 센서 연동(위) + 현장 시연(아래) */}
+        <div className="flex flex-col gap-2 h-full">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{ flex: "0 0 38%" }}>
+            <Image src="/images/tape/tape-app-live.jpeg" alt="센서 데이터 연동" width={600} height={400} className="w-full h-full object-cover" />
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-1">
+            <Image src="/images/tape/tape-analysis2.jpg" alt="현장 시연" width={600} height={900} className="w-full h-full object-cover object-top" />
+          </div>
         </div>
       </div>
 
