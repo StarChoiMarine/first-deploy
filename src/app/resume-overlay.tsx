@@ -187,13 +187,13 @@ function TapeContent() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-2 mb-2">
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/tape/tape-award-kgu.jpeg" alt="경기대 대상" width={600} height={800} className="w-full h-auto max-h-56 object-cover object-top" />
+      <div className="flex gap-4 justify-center mb-2">
+        <div className="w-52 rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+          <Image src="/images/tape/tape-award-kgu.jpeg" alt="경기대 대상" width={600} height={800} className="w-full h-auto" />
           <p className="text-xs text-center text-gray-400 py-1">경기대 SW 상상기업 대상</p>
         </div>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/tape/tape-award-sw-festival.jpg" alt="SW페스티벌 최우수상" width={600} height={800} className="w-full h-auto max-h-56 object-cover object-top" />
+        <div className="w-52 rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+          <Image src="/images/tape/tape-award-sw-festival.jpg" alt="SW페스티벌 최우수상" width={600} height={800} className="w-full h-auto" />
           <p className="text-xs text-center text-gray-400 py-1">SW 페스티벌 최우수상</p>
         </div>
       </div>
@@ -206,7 +206,7 @@ function TapeContent() {
         </div>
       </div>
       <div className="rounded-xl overflow-hidden shadow-sm">
-        <Image src="/images/tape/tape-ces2026.jpg" alt="CES 2026" width={1200} height={800} className="w-full h-auto max-h-52 object-cover" />
+        <Image src="/images/tape/tape-ces2026.jpg" alt="CES 2026" width={1200} height={800} className="w-full h-auto" />
         <p className="text-xs text-center text-gray-400 py-1">CES 2026 라스베이거스 연수</p>
       </div>
     </div>
@@ -334,17 +334,19 @@ function HaiContent() {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/hai/hai-presentation.png" alt="발표 현장" width={800} height={600} className="w-full h-auto max-h-48 object-cover" />
+        <div className="aspect-video rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+          <Image src="/images/hai/hai-presentation.png" alt="발표 현장" width={800} height={600} className="w-full h-full object-cover" />
           <p className="text-xs text-center text-gray-400 py-1">LG CNS 부트캠프 최종 발표</p>
         </div>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/hai/hai-award-certificate.png" alt="대상 상장" width={600} height={800} className="w-full h-auto max-h-48 object-cover object-top" />
-          <p className="text-xs text-center text-gray-400 py-1">LG CNS AM Inspire 3기 대상 상장</p>
+        <div className="flex justify-center items-start">
+          <div className="w-44 rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+            <Image src="/images/hai/hai-award-certificate.png" alt="대상 상장" width={600} height={800} className="w-full h-auto" />
+            <p className="text-xs text-center text-gray-400 py-1">LG CNS AM Inspire 3기 대상 상장</p>
+          </div>
         </div>
       </div>
       <div className="rounded-xl overflow-hidden shadow-sm mt-2">
-        <Image src="/images/hai/hai-award-team.png" alt="수상 팀" width={1200} height={800} className="w-full h-auto max-h-52 object-cover" />
+        <Image src="/images/hai/hai-award-team.png" alt="수상 팀" width={1200} height={800} className="w-full h-auto" />
         <p className="text-xs text-center text-gray-400 py-1">LG CNS AM Inspire 3기 최종프로젝트 대상 팀 🏆</p>
       </div>
     </div>
@@ -451,23 +453,23 @@ function NewsbalanceContent() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-2 mb-2">
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/newsbalance/nb-award-kiit.png" alt="금상 상장" width={600} height={800} className="w-full h-auto max-h-52 object-cover object-top" />
+      <div className="flex gap-4 justify-center mb-2">
+        <div className="w-52 rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+          <Image src="/images/newsbalance/nb-award-kiit.png" alt="금상 상장" width={600} height={800} className="w-full h-auto" />
           <p className="text-xs text-center text-gray-400 py-1">한국정보기술학회 우수논문상 금상</p>
         </div>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/newsbalance/nb-award-capstonе.jpeg" alt="은상 상장" width={600} height={800} className="w-full h-auto max-h-52 object-cover object-top" />
+        <div className="w-52 rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+          <Image src="/images/newsbalance/nb-award-capstonе.jpeg" alt="은상 상장" width={600} height={800} className="w-full h-auto" />
           <p className="text-xs text-center text-gray-400 py-1">경기대 심화캡스톤 은상</p>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/newsbalance/nb-presentation1.png" alt="발표 현장" width={600} height={800} className="w-full h-auto max-h-48 object-cover object-top" />
+      <div className="flex gap-4 justify-center">
+        <div className="w-52 rounded-xl overflow-hidden shadow-sm">
+          <Image src="/images/newsbalance/nb-presentation1.png" alt="발표 현장" width={600} height={800} className="w-full h-auto" />
           <p className="text-xs text-center text-gray-400 py-1">논문 발표 현장</p>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/newsbalance/nb-presentation2.png" alt="발표 현장 2" width={600} height={800} className="w-full h-auto max-h-48 object-cover object-top" />
+        <div className="w-52 rounded-xl overflow-hidden shadow-sm">
+          <Image src="/images/newsbalance/nb-presentation2.png" alt="발표 현장 2" width={600} height={800} className="w-full h-auto" />
         </div>
       </div>
 
