@@ -646,14 +646,19 @@ function NewsbalanceContent() {
         <p className="text-sm font-black text-purple-600">SW 저작권 등록</p>
         <p className="text-xs text-gray-500 mt-0.5">NewsBalance · 2025.07</p>
       </div>
-      {/* 발표 사진 */}
-      <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/newsbalance/nb-presentation1.png" alt="발표 현장" width={600} height={800} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 py-1">논문 발표 현장</p>
+      {/* 발표 사진 + 라이선스 */}
+      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 2fr" }}>
+        <div className="flex flex-col gap-1">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <Image src="/images/newsbalance/nb-sw-license.png" alt="SW 저작권 등록증" width={400} height={800} className="w-full h-auto" />
+          </div>
+          <p className="text-xs text-center text-gray-400">SW 저작권 등록증</p>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/newsbalance/nb-presentation2.png" alt="발표 현장 2" width={600} height={800} className="w-full h-auto" />
+        <div className="flex flex-col gap-1">
+          <div className="rounded-xl overflow-hidden shadow-sm">
+            <Image src="/images/newsbalance/nb-presentation1.png" alt="논문 발표 현장" width={600} height={800} className="w-full h-auto" />
+          </div>
+          <p className="text-xs text-center text-gray-400">논문 발표 현장</p>
         </div>
       </div>
 
