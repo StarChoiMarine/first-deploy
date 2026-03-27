@@ -139,13 +139,8 @@ function TapeContent() {
             <p className="text-xs text-center text-gray-400 py-1.5">SW 페스티벌 최우수상</p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/tape/tape-celebration.jpg" alt="수상 순간" width={1200} height={675} className="w-full h-auto" />
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/tape/tape-swfestival-celebration.jpg" alt="SW페스티벌 최우수상 수상" width={1200} height={675} className="w-full h-auto" />
-          </div>
+        <div className="rounded-xl overflow-hidden shadow-sm">
+          <Image src="/images/tape/tape-celebration.jpg" alt="수상 순간" width={1200} height={675} className="w-full h-auto" />
         </div>
       </div>
 
@@ -162,48 +157,25 @@ function TapeContent() {
 function HaiContent() {
   return (
     <div className="space-y-6 text-gray-800">
-
-      {/* 히어로 */}
-      <div className="rounded-xl overflow-hidden shadow-sm bg-[#0d2b2b]">
-        <Image src="/images/hai/hai-hero-illustration.png" alt="H.AI 메인 일러스트" width={1200} height={800} className="w-full h-auto" />
-      </div>
-
-      {/* 개요 */}
       <div className="p-4 bg-green-50 rounded-xl text-sm text-gray-700 leading-relaxed">
         Gen AI 기술과 다양한 시각적 요소들을 기반으로 학생들의 참여를 유도하는
         <strong> AI 역사 디지털 교과서</strong>입니다. 기존 텍스트 중심·단방향 역사 수업의 한계를 해결합니다.
       </div>
 
-      {/* 앱 화면 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">서비스 화면</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-app-mockup.png" alt="H.AI 앱 목업" width={900} height={600} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">AI 인물 대화 · 지도 시각화</p>
+      <div className="grid grid-cols-3 gap-3 text-xs">
+        {[
+          { icon: "🗺", label: "지도 기반 시각화", desc: "시대에 따라 변하는 국경 지도 위 캐릭터 이동" },
+          { icon: "💬", label: "AI 인물 대화", desc: "LLM 기반 역사 인물과 실시간 채팅 · Tool Calling" },
+          { icon: "🤝", label: "실시간 온라인 토론", desc: "AI 사회자 · 토론 결과 자동 요약" },
+        ].map((s) => (
+          <div key={s.label} className="p-3 bg-gray-50 rounded-xl border border-gray-100">
+            <p className="text-xl mb-1">{s.icon}</p>
+            <p className="font-bold text-gray-700 mb-1">{s.label}</p>
+            <p className="text-gray-500 leading-relaxed">{s.desc}</p>
           </div>
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-app-screen.png" alt="H.AI 실제 앱 화면" width={900} height={600} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">조선시대 — 임진왜란 지도 탐색</p>
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* 핵심 기능 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">핵심 기능</p>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/hai/hai-features.png" alt="핵심 기능 3가지" width={1200} height={500} className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* 토론 다이어그램 */}
-      <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-        <Image src="/images/hai/hai-debate-diagram.png" alt="실시간 온라인 토론 흐름" width={1200} height={600} className="w-full h-auto" />
-        <p className="text-xs text-center text-gray-400 py-1.5">실시간 온라인 토론 — AI 사회자 · 토론 요약</p>
-      </div>
-
-      {/* 역할 */}
       <div className="grid grid-cols-2 gap-3">
         {[
           { label: "프로젝트 리딩", contrib: 70, items: ["서비스 방향 및 핵심 기능 정의", "GitHub Projects 기반 일정 관리", "최종 발표 주도"] },
@@ -226,61 +198,14 @@ function HaiContent() {
         ))}
       </div>
 
-      {/* 기술 아키텍처 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">기술 구현</p>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm mb-3">
-          <Image src="/images/hai/hai-tool-calling.png" alt="Tool Calling 아키텍처" width={1200} height={600} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 py-1.5">Tool Calling — AWS Bedrock · Django API</p>
-        </div>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-rag-diagram.png" alt="RAG 구조" width={600} height={400} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">RAG 파이프라인</p>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-stt-diagram.png" alt="STT 구조" width={600} height={400} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">STT 실시간 음성 인식</p>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-tts-diagram.png" alt="TTS 구조" width={600} height={400} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">TTS 실시간 음성 출력</p>
-          </div>
-        </div>
+      <div className="p-4 bg-green-50 border border-green-100 rounded-xl">
+        <p className="text-xs font-bold text-green-700 mb-1">🏆 LG CNS AM Inspire 3기 최종프로젝트 대상</p>
+        <p className="text-xs text-gray-600">초등학생 12명 대상 현장 테스트 완료 · 울산 호연초등학교</p>
       </div>
 
-      {/* 사용자 테스트 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">사용자 테스트 · 울산 호연초등학교</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/hai/hai-usertest-classroom.png" alt="사용자 테스트 수업 현장" width={600} height={400} className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/hai/hai-usertest-group.png" alt="호연초 단체사진" width={600} height={400} className="w-full h-full object-cover" />
-          </div>
-        </div>
+      <div className="border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center h-32 text-gray-400 text-xs">
+        사진 업로드 후 반영됩니다 (hai 폴더)
       </div>
-
-      {/* 발표 & 수상 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">발표 · 수상</p>
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-presentation.png" alt="발표 현장" width={800} height={600} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">LG CNS 부트캠프 최종 발표</p>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/hai/hai-award-certificate.png" alt="LG CNS 대상 상장" width={600} height={800} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">LG CNS AM Inspire 3기 대상 상장</p>
-          </div>
-        </div>
-        <div className="rounded-xl overflow-hidden shadow-sm">
-          <Image src="/images/hai/hai-award-team.png" alt="수상 팀 단체사진" width={1200} height={800} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 py-1.5">LG CNS AM Inspire 3기 최종프로젝트 대상 🏆</p>
-        </div>
-      </div>
-
     </div>
   );
 }
@@ -288,31 +213,11 @@ function HaiContent() {
 function NewsbalanceContent() {
   return (
     <div className="space-y-6 text-gray-800">
-
-      {/* 개요 */}
       <div className="p-4 bg-purple-50 rounded-xl text-sm text-gray-700 leading-relaxed">
         유튜브 공공 이슈 콘텐츠의 <strong>정확도와 편향도를 분석</strong>하여 사용자에게 균형감있는 콘텐츠와 근거기사를 제공하는 플랫폼입니다.
         국내 유튜브 뉴스 소비율 53%, 알고리즘 특성으로 인한 확증편향 심화 문제를 해결합니다.
       </div>
 
-      {/* 서비스 화면 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">서비스 화면</p>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/newsbalance/nb-app-screen.png" alt="NEWSBALANCE 서비스 화면" width={1200} height={700} className="w-full h-auto" />
-          <p className="text-xs text-center text-gray-400 py-1.5">유튜브 영상 편향도 분석 · 관련 뉴스 기사 제공</p>
-        </div>
-      </div>
-
-      {/* 전체 시스템 포스터 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">시스템 구성</p>
-        <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-          <Image src="/images/newsbalance/nb-poster.png" alt="NEWSBALANCE 시스템 포스터" width={1200} height={900} className="w-full h-auto" />
-        </div>
-      </div>
-
-      {/* 역할 */}
       <div className="grid grid-cols-2 gap-3">
         {[
           { label: "프로젝트 리딩", contrib: 90, items: ["기획 및 개발과정 주도", "논문 작성 및 투고 (제1저자)", "최종 발표"] },
@@ -335,62 +240,24 @@ function NewsbalanceContent() {
         ))}
       </div>
 
-      {/* KcBERT 모델 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">KcBERT 편향도 분류 모델</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-center bg-white p-4">
-            <Image src="/images/newsbalance/nb-kcbert-diagram.png" alt="KcBERT 구조" width={600} height={300} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 mt-2">KcBERT 인코더 → Softmax 분류</p>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm flex flex-col justify-center bg-white p-4">
-            <Image src="/images/newsbalance/nb-model-results.png" alt="모델 학습 결과" width={600} height={300} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 mt-2">파인튜닝 결과 — F1 Macro 0.783</p>
-          </div>
+      <div className="grid grid-cols-3 gap-3 text-xs">
+        <div className="p-3 bg-purple-50 rounded-xl border border-purple-100 text-center">
+          <p className="text-xl font-black text-purple-600">금상</p>
+          <p className="text-gray-500 mt-1">한국정보기술학회 논문경진대회 (제1저자)</p>
+        </div>
+        <div className="p-3 bg-purple-50 rounded-xl border border-purple-100 text-center">
+          <p className="text-xl font-black text-purple-600">은상</p>
+          <p className="text-gray-500 mt-1">경기대 심화캡스톤 디자인</p>
+        </div>
+        <div className="p-3 bg-purple-50 rounded-xl border border-purple-100 text-center">
+          <p className="text-xl font-black text-purple-600">등록</p>
+          <p className="text-gray-500 mt-1">SW 저작권 (NewsBalance, 2025.07)</p>
         </div>
       </div>
 
-      {/* 개발 과정 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">개발 과정</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/newsbalance/nb-team-working.png" alt="팀 작업 현장" width={600} height={400} className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-video rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/newsbalance/nb-team-exhibition.png" alt="캡스톤 전시회" width={600} height={400} className="w-full h-full object-cover" />
-          </div>
-        </div>
+      <div className="border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center h-32 text-gray-400 text-xs">
+        사진 업로드 후 반영됩니다 (newsbalance 폴더)
       </div>
-
-      {/* 발표 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">발표 현장</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/newsbalance/nb-presentation1.png" alt="발표 현장 1" width={600} height={800} className="w-full h-auto" />
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-sm">
-            <Image src="/images/newsbalance/nb-presentation2.png" alt="발표 현장 2" width={600} height={800} className="w-full h-auto" />
-          </div>
-        </div>
-      </div>
-
-      {/* 수상 */}
-      <div>
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">수상</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/newsbalance/nb-award-kiit.png" alt="한국정보기술학회 금상" width={600} height={800} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">한국정보기술학회 우수논문상 금상</p>
-          </div>
-          <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-            <Image src="/images/newsbalance/nb-award-capstonе.jpeg" alt="경기대 심화캡스톤 은상" width={600} height={800} className="w-full h-auto" />
-            <p className="text-xs text-center text-gray-400 py-1.5">경기대 심화캡스톤 은상</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 }
