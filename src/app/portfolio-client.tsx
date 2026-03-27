@@ -89,14 +89,6 @@ export default function PortfolioClient({
                 {/* 라인 + 버튼 */}
                 <div className="relative mt-6 sm:mt-8">
                     <div className="h-[1px] bg-white/80 mx-auto animate-growLine" />
-                    {phase === "main" && (
-                        <button
-                            onClick={handleOpenResume}
-                            className="absolute -right-1 top-1/2 -translate-y-1/2 text-sm sm:text-base opacity-0 animate-showCta hover:text-white/60 transition-colors cursor-pointer"
-                        >
-                            resume 보러가기 →
-                        </button>
-                    )}
                 </div>
 
                 {/* 포트폴리오 바로가기 버튼 */}
